@@ -4,18 +4,23 @@ body{
 .garp_one{
     height: 100svh;
     width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
 }
 .garp_left{
     height: 700px;
-    width: 600px;
+    width: 400px;
     /* background-color: aqua; */
     display: flex;
     justify-content: space-evenly;
     align-items: center;
 }
 .garp_item_docker{
-    height: 400px;
-    width: 100px;
+    height: fit-content;
+    width: fit-content;
+    padding: 20px;
     border: 1px solid azure;
     border-radius: 15px;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
@@ -28,13 +33,13 @@ body{
 .docker_items{
     height: 80px;
     width: 80px;
-    background-color: antiquewhite;
-    border-radius: 12px;
+    border-radius: 25px;
     display: flex;
     justify-content: center;
     align-items: center;
     overflow: hidden;
     transition: transform 0.3s ease, flex 0.3s ease;
+    border:1px solid black;
 }
 .docker_items img{
     height: 60%;
@@ -47,4 +52,37 @@ body{
 }
 .docker_items:hover ~ .docker_items {
     transform: scale(0.9);
+}
+.garp_right{
+    height: 650px;
+    width: 550px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url('../assets/pelexsOne.jpg');
+    background-position: center;
+    background-size: cover;
+    border-radius: 15px;
+}
+
+.garp_contests{
+    height: 550px;
+    width: 425px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+    backdrop-filter: blur(3px);
+}
+
+/* media queries */
+@media screen and (max-width:1000px) {
+    .garp_item_docker{
+        flex-direction: row;
+    }
+    .garp_left{
+        height: 40svh;
+    }
 }
