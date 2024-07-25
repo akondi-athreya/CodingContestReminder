@@ -1,19 +1,219 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DashBoard</title>
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Arsenal+SC:ital,wght@0,400;0,700;1,400;1,700&family=Karla:ital,wght@0,200..800;1,200..800&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="../css/css3.css">
 </head>
+
 <body>
-    <div class="otsotsuki sagemode">
-        <div class="indra"></div>
-        <div class="sixpath"></div>
-        <div class="kurama"></div>
-
-
+    <div class="header">
+        <div class="logo"><i class="fa-solid fa-stopwatch"></i></div>
+        <div class="sect">
+            <div class="home">Home</div>
+            <div class="dashboard">Dashboard</div>
+            <div class="upcoming">Upcoming</div>
+            <div class="Todo">To-do List</div>
+        </div>
+        <div class="bars">
+            <i class="fa-solid fa-bars"></i>
+            <div class="parent">
+                <br>
+                <div class="hovers">Profile</div>
+                <hr>
+                <div class="hovers">Home</div>
+                <hr>
+                <div class="hovers">Dashboard</div>
+                <hr>
+                <div class="hovers">Upcoming</div>
+                <hr>
+                <div class="hovers">To-do List</div>
+                <hr>
+            </div>
+        </div>
+        <div class="profile"><i class="fa-solid fa-user"></i></div>
     </div>
-    
+    <div class="dashboard-main">
+        <div class="dashboard-main-hide">
+            <div class="dashboard-prof-hide">
+                <div class="profii-hide">
+                    <div class="pro-hide"></div>
+                </div>
+
+            </div>
+            <div class="dashboard-data-main-hide">
+                <div class="dashboard-head-hide">
+                    <div class="dash_h1" id="a" onclick="ma()">Main</div>
+                    <div class="dash_h1" id="b" onclick="badg()">Badges</div>
+                    <div class="dash_h1" id="c" onclick="prof()">Coding Prof</div>
+                </div>
+                <div class="dash-sli-hide">
+                    <div class="dash-sli--hh">
+                        <div class="dash-pr-h">111</div>
+                        <div class="dash-pr-h">2</div>
+                        <div class="dash-pr-h">3</div>
+                        <div class="dash-pr-h">4</div>
+                    </div>
+                    <div class="bg">
+                        <div class="bg-hl">
+                            <div class="lee-h">Leetcode</div>
+                            <div class="ds-lh" onclick="lh()">+</div>
+                        </div>
+                        <div class="bg-hl-1"></div>
+                        <div class="bg-hc">
+                            <div class="che-h">Codechef</div>
+                            <div class="ds-ch" onclick="ch()">+</div>
+                        </div>
+                        <div class="bg-hc-1"></div>
+                        <div class="bg-hcf">
+                            <div class="cf-h">CodeForces</div>
+                            <div class="ds-cfh" onclick="cfh()">+</div>
+                        </div>
+                        <div class="bg-hcf-1"> </div>
+
+
+                    </div>
+                    <div class="pf">
+                        <div class="bg-hl">
+                            <div class="lee-h">Leetcode</div>
+                            <div class="ds-lh" onclick="lh()">+</div>
+                        </div>
+                        <div class="bg-hl-1">
+                            <div class="pf-hl-1"></div>
+                        </div>
+                        <div class="bg-hc">
+                            <div class="che-h">Codechef</div>
+                            <div class="ds-ch" onclick="ch()">+</div>
+                        </div>
+                        <div class="bg-hc-1">
+                            <div class="pf-hc-1"></div>
+                        </div>
+                        <div class="bg-hcf">
+                            <div class="cf-h">CodeForces</div>
+                            <div class="ds-cfh" onclick="cfh()">+</div>
+                        </div>
+                        <div class="bg-hcf-1">
+                            <div class="pf-hcf-1"></div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </div>
+        <div class="dashboard-main-show">
+            <div class="dashboard-prof">
+                <div class="profii">
+                    <div class="pro"></div>
+
+                </div>
+                <div class="det">
+                    <div class="det-h">UserName:</div>
+                    <div class="det-g"></div>
+                </div>
+
+            </div>
+            <div class="dashboard-data-main-show">
+                <div class="dashboard-head">
+                    <div class="dash_h" id="d" onclick="ma()">Main</div>
+                    <div class="dash_h" id="e" onclick="badg()">Badges</div>
+                    <div class="dash_h" id="f" onclick="prof()">Coding Prof</div>
+
+                </div>
+                <div class="mental">
+                    <div class="dash-main-sli">
+                        <div class="dash-sli">
+                            <div class="dash-pr">
+                                <div class="cchf">
+                                    <div class="cchf1"></div>
+                                    <div class="cchf2"></div>
+                                    <div class="cchf3">ayyappa_19</div>
+                                </div>
+                            </div>
+                            <div class="dash-pr">
+                                <div class="leet">
+
+                                    <div class="lee1"></div>
+                                    <div class="lee2"></div>
+                                    <div class="lee3">ayyappa_19</div>
+                                </div>
+                            </div>
+                            <div class="dash-pr">
+                                <div class="gfgh">
+
+                                    <div class="gfgh1"></div>
+                                    <div class="gfgh2"></div>
+                                    <div class="gfgh3">ayyappa_19</div>
+                                </div>
+                            </div>
+                            <div class="dash-pr">
+                                <div class="cfff">
+
+                                    <div class="cfff1"></div>
+                                    <div class="cfff2"></div>
+                                    <div class="cfff3">ayyappa_19</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dash-chart">
+                        <div id="dash-ch"></div>
+                    </div>
+                    <div class="bdg">
+                        <div class="bdg-sl"></div>
+                        <div class="bdg-sc"></div>
+                        <div class="bdg-scf"></div>
+
+                    </div>
+                    <div class="prf">
+                        <div class="prf-sl"></div>
+                        <div class="prf-sc"></div>
+                        <div class="prf-scf"></div>
+                        <div class="prf-sg"></div>
+
+                    </div>
+                </div>
+
+            </div>
+            <!-- <div class="dashboard-prof-hide"></div> -->
+
+            <!-- <div class="dashboard-head-hide">
+                <div class="dash_h1">Main</div>
+                <div class="dash_h1">Badges</div>
+                <div class="dash_h1">Coding Prof</div>
+                </div> -->
+
+
+        </div>
+    </div>
+
 </body>
+
+</html>
+
+
+
+
+<script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<script src='https://cdn.plot.ly/plotly-2.34.0.min.js'></script>
+<script src="/js/js3.js"></script>
+</body>
+
 </html>
