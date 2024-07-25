@@ -3,28 +3,28 @@
 var codeforces_data = {};
 let CFoneMonth = [];
 
-// async function fun() {
-//     try {
-//         const response = await fetch('https://codeforces.com/api/contest.list');
-//         const data = await response.json();
-//         codeforces_data = data;
-//         // console.log(codeforces_data);
+async function fun() {
+    try {
+        const response = await fetch('https://codeforces.com/api/contest.list');
+        const data = await response.json();
+        codeforces_data = data;
+        // console.log(codeforces_data);
         
-//         let j = 0;
-//         while (codeforces_data.result[j] && codeforces_data.result[j].phase === "BEFORE") {
-//             let contest = codeforces_data.result[j];
-//             contest.startTimeSeconds = unixToDateTime(contest.startTimeSeconds);
-//             contest.durationSeconds = StoM(contest.durationSeconds);
-//             CFoneMonth.push(contest);
-//             j++;
-//         }
-//         CFoneMonth.reverse();
-//     } catch (error) {
-//         console.log(error);
-//     }
-// }
+        let j = 0;
+        while (codeforces_data.result[j] && codeforces_data.result[j].phase === "BEFORE") {
+            let contest = codeforces_data.result[j];
+            contest.startTimeSeconds = unixToDateTime(contest.startTimeSeconds);
+            contest.durationSeconds = StoM(contest.durationSeconds);
+            CFoneMonth.push(contest);
+            j++;
+        }
+        CFoneMonth.reverse();
+    } catch (error) {
+        console.log(error);
+    }
+}
 
-// fun();
+fun();
 document.addEventListener('DOMContentLoaded', () => {
     const cfButton = document.querySelector('#CF');
     if (cfButton) {
@@ -57,111 +57,18 @@ function custom_CF_contest() {
     parent.innerHTML = "";
     console.log(CFoneMonth);
     if (codeforces_data.result) {
-        CFoneMonth.forEach(contest =>
-            default_code(contest)
-        );
+        CFoneMonth.map((i, index) => {
+            default_code(i, index)            
+        })
     }
-}
-function creatingDiv(obj) {
-    var parent = document.getElementsByClassName('garp_contests')[0];
-    parent.style.border = '1px solid black';
-    parent.style.backdropFilter = 'blur(3px)';
-    parent.style.overflowX = 'hidden';
-    parent.style.overflowY = 'scroll';
-
-    var child = document.createElement('div');
-    child.setAttribute('class', 'garp_childs');
-    // child.setAttribute('href', 'https://codeforces.com/contests?complete=true');
-
-    var head = document.createElement('div');
-    head.setAttribute('class', 'name_of_contest');
-    head.innerHTML = obj.name;
-
-    var html_dur = document.createElement('div');
-    html_dur.setAttribute('class', 'duration_of_contest');
-    html_dur.innerHTML = obj.duration || obj.durationSeconds;
-
-    var html_date = document.createElement('div');
-    html_date.setAttribute('class', 'date_of_contest');
-    html_date.innerHTML = obj.startTimeSeconds;
-
-    var icn = document.createElement('div');
-    icn.style.width = '30px';
-    icn.style.height = '30px';
-    icn.style.background = "url('../assets/cf.png')";
-    icn.style.backgroundSize = 'cover';
-    icn.style.backgroundRepeat = 'no-repeat';
-    icn.style.backgroundPosition = 'center';
-    icn.style.position = 'absolute';
-    icn.style.bottom = '10';
-    icn.style.right = '10';
-
-    var rotate = document.createElement('div');
-    rotate.setAttribute('class', 'rotate_div');
-    rotate.innerHTML = 'More';
-
-    // Add event listener to rotate div
-    rotate.addEventListener('click', function() {
-        card_rotation_bro(ind);
-    });
-
-    child.appendChild(icn);
-    child.append(rotate);
-
-    var back_side = document.createElement('div');
-    back_side.setAttribute('class', 'back_side');
-    var linking = document.createElement('a');
-    linking.setAttribute('class', 'linking');
-    var spn = document.createElement('span');
-    spn.setAttribute('class' , 'icon');
-    var icccn = document.createElement('i');
-    icccn.setAttribute('class','fa-solid fa-angle-right');
-    var spn_tw = document.createElement('span');
-    spn_tw.setAttribute('class','text');
-    spn_tw.innerHTML = "Visit Page";
-    linking.setAttribute('target' , '_blank');
-    linking.style.textDecoration = 'none';
-    linking.setAttribute('href' , 'https://codeforces.com/contests');
-    child.appendChild(head);
-    child.appendChild(html_date);
-    child.appendChild(html_dur);
-    child.appendChild(icn);
-    parent.appendChild(child);
-
-
-    var turn_back = document.createElement('div');
-    turn_back.setAttribute('class', 'turn_back');
-    turn_back.style.position = 'absolute';
-    turn_back.style.bottom = '10';
-    turn_back.style.left = '10';
-    turn_back.style.cursor = 'pointer';
-    turn_back.style.fontSize = '30px';
-    var turn_back_icn = document.createElement('i');
-    turn_back_icn.setAttribute('class', 'fa-solid fa-circle-left');
-    turn_back.appendChild(turn_back_icn);
-
-    turn_back_icn.addEventListener('click', function() {
-        card_rotation_bro_two(ind);
-    });
-
-    back_side.appendChild(turn_back);
-
-    spn.appendChild(icccn);
-    linking.appendChild(spn);
-    linking.appendChild(spn_tw);
-    back_side.appendChild(linking);
-
-    main_card.appendChild(child);
-    main_card.appendChild(back_side);
-    parent.appendChild(main_card);
 }
 
 function custom_LC_contest() {
     console.log('showing leetcode contests only');
     var parent = document.getElementsByClassName('garp_contests')[0];
     parent.innerHTML = "";
-    leet.map(i => {
-        default_code(i);
+    leet.map((i, index) => {
+        default_code(i, index);
     })
 }
 
@@ -169,8 +76,8 @@ function custom_CC_contest() {
     console.log('showing codechef contests only');
     var parent = document.getElementsByClassName('garp_contests')[0];
     parent.innerHTML = "";
-    chef.map(i => {
-        default_code(i);
+    chef.map((i, index) => {
+        default_code(i, index);
     })
 }
 
@@ -178,8 +85,8 @@ function custom_GFG_contest() {
     console.log('showing GeeksForGeeks contests only');
     var parent = document.getElementsByClassName('garp_contests')[0];
     parent.innerHTML = "";
-    gfg.map(i => {
-        default_code(i);
+    gfg.map((i, index) => {
+        default_code(i, index);
     })
 }
 
@@ -374,8 +281,32 @@ function default_code(ele, ind) {
 
     var timer_div = document.createElement('div');
     timer_div.setAttribute('class' , `timer_div ${ind}`);
-    var crocodile = monkeyDdragon((ele.date || ele.startTimeSeconds));
-    
+
+    var still = document.createElement('div');
+    still.setAttribute('class' , 'still');
+    still.innerHTML = "Time left";
+    back_side.appendChild(still);
+
+    function updateCountdown() {
+        var now = new Date();
+        var contestDate = new Date(ele.date || ele.startTimeSeconds);
+        var diff = contestDate - now;
+
+        if (diff <= 0) {
+            timer_div.innerHTML = "Contest Started";
+            clearInterval(intervalId);
+            return;
+        }
+
+        var hours = Math.floor(diff / (1000 * 60 * 60));
+        var minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((diff % (1000 * 60)) / 1000);
+        timer_div.innerHTML = `${hours} : ${minutes} : ${seconds}`;
+    }
+
+    var intervalId = setInterval(updateCountdown, 1000);
+    updateCountdown();
+
     
     back_side.appendChild(timer_div);
 
@@ -431,15 +362,13 @@ function card_rotation_bro_two(ind) {
 }
 
 function monkeyDdragon(contime) {
-    // console.log(contime);
 
     var now = new Date();
     var contestDate = new Date(contime);
     var diff = contestDate - now;
     var hours = Math.floor(diff / (1000 * 60 * 60));
     var minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-
-    console.log("Time left: " + hours + " hours and " + minutes + " minutes ");
-    return {hours , minutes};
+    var sec = now.getSeconds();
+    return {hours , minutes , sec };
 }
 
