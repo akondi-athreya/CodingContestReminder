@@ -1,67 +1,67 @@
-document.querySelectorAll('.docker_items').forEach(item => {
-    item.addEventListener('mouseover', () => {
-        document.querySelectorAll('.docker_items').forEach(sibling => {
-            if (sibling !== item) {
-                sibling.style.transform = 'scale(0.9)';
-            }
-        });
-        item.style.transform = 'scale(1.3)';
-    });
-    item.addEventListener('mouseout', () => {
-        document.querySelectorAll('.docker_items').forEach(sibling => {
-            sibling.style.transform = 'scale(1)';
-        });
-    });
-});
 
 
 var codeforces_data = {};
 let CFoneMonth = [];
 
-// fetch('https://codeforces.com/api/contest.list')
-//     .then(response => response.json())
-//     .then(data => {
+// async function fun() {
+//     try {
+//         const response = await fetch('https://codeforces.com/api/contest.list');
+//         const data = await response.json();
 //         codeforces_data = data;
-//         console.log(codeforces_data);
+//         // console.log(codeforces_data);
+        
 //         let j = 0;
 //         while (codeforces_data.result[j] && codeforces_data.result[j].phase === "BEFORE") {
-//             CFoneMonth.push(codeforces_data.result[j]);
+//             let contest = codeforces_data.result[j];
+//             contest.startTimeSeconds = unixToDateTime(contest.startTimeSeconds);
+//             contest.durationSeconds = StoM(contest.durationSeconds);
+//             CFoneMonth.push(contest);
 //             j++;
 //         }
 //         CFoneMonth.reverse();
-//     })
-//     .catch(error => console.log(error));
+//     } catch (error) {
+//         console.log(error);
+//     }
+// }
 
-const proxyUrl = 'https://cors.bridged.cc/';
-const targetUrl = 'https://codeforces.com/api/contest.list';
+// fun();
+document.addEventListener('DOMContentLoaded', () => {
+    const cfButton = document.querySelector('#CF');
+    if (cfButton) {
+        cfButton.addEventListener('click', custom_CF_contest);
+    }
 
-fetch(proxyUrl + targetUrl)
-    .then(response => {
-        if (!response.ok) {
-            throw new Error('Network response was not ok ' + response.statusText);
-        }
-        return response.json();
-    })
-    .then(data => console.log(data))
-    .catch(error => console.error('There has been a problem with your fetch operation:', error));
+    const lcButton = document.querySelector('#LC');
+    if (lcButton) {
+        lcButton.addEventListener('click', custom_LC_contest);
+    }
 
+    const ccButton = document.querySelector('#CC');
+    if (ccButton) {
+        ccButton.addEventListener('click', custom_CC_contest);
+    }
 
+    const gfgButton = document.querySelector('#GFG');
+    if (gfgButton) {
+        gfgButton.addEventListener('click', custom_GFG_contest);
+    }
+    const allShow = document.querySelector('#shinchan');
+    if (allShow) {
+        allShow.addEventListener('click', luffy);
+    }
+});
 
-
-
-// Creating custom contest div's
-document.querySelector('#CF').addEventListener('click', custom_CF_contest);
 function custom_CF_contest() {
-    console.log('hi');
+    console.log('showing codeforces contests only');
+    var parent = document.getElementsByClassName('garp_contests')[0];
+    parent.innerHTML = "";
     console.log(CFoneMonth);
     if (codeforces_data.result) {
         CFoneMonth.forEach(contest =>
-            creatingDiv(contest)
+            default_code(contest)
         );
     }
 }
-
-// ? Creating custom object Div's
 function creatingDiv(obj) {
     var parent = document.getElementsByClassName('garp_contests')[0];
     parent.style.border = '1px solid black';
@@ -69,13 +69,9 @@ function creatingDiv(obj) {
     parent.style.overflowX = 'hidden';
     parent.style.overflowY = 'scroll';
 
-    var dateTime = unixToDateTime(obj.startTimeSeconds);
-    var duration = StoM(obj.durationSeconds);
-
-    var child = document.createElement('a');
+    var child = document.createElement('div');
     child.setAttribute('class', 'garp_childs');
-    child.setAttribute('href', 'https://codeforces.com/contests?complete=true');
-    child.setAttribute('target', '_blank');
+    // child.setAttribute('href', 'https://codeforces.com/contests?complete=true');
 
     var head = document.createElement('div');
     head.setAttribute('class', 'name_of_contest');
@@ -83,11 +79,11 @@ function creatingDiv(obj) {
 
     var html_dur = document.createElement('div');
     html_dur.setAttribute('class', 'duration_of_contest');
-    html_dur.innerHTML = duration;
+    html_dur.innerHTML = obj.duration || obj.durationSeconds;
 
     var html_date = document.createElement('div');
     html_date.setAttribute('class', 'date_of_contest');
-    html_date.innerHTML = dateTime;
+    html_date.innerHTML = obj.startTimeSeconds;
 
     var icn = document.createElement('div');
     icn.style.width = '30px';
@@ -100,26 +96,104 @@ function creatingDiv(obj) {
     icn.style.bottom = '10';
     icn.style.right = '10';
 
+    var rotate = document.createElement('div');
+    rotate.setAttribute('class', 'rotate_div');
+    rotate.innerHTML = 'More';
+
+    // Add event listener to rotate div
+    rotate.addEventListener('click', function() {
+        card_rotation_bro(ind);
+    });
+
+    child.appendChild(icn);
+    child.append(rotate);
+
+    var back_side = document.createElement('div');
+    back_side.setAttribute('class', 'back_side');
+    var linking = document.createElement('a');
+    linking.setAttribute('class', 'linking');
+    var spn = document.createElement('span');
+    spn.setAttribute('class' , 'icon');
+    var icccn = document.createElement('i');
+    icccn.setAttribute('class','fa-solid fa-angle-right');
+    var spn_tw = document.createElement('span');
+    spn_tw.setAttribute('class','text');
+    spn_tw.innerHTML = "Visit Page";
+    linking.setAttribute('target' , '_blank');
+    linking.style.textDecoration = 'none';
+    linking.setAttribute('href' , 'https://codeforces.com/contests');
+    child.appendChild(head);
     child.appendChild(html_date);
     child.appendChild(html_dur);
-    child.appendChild(head);
     child.appendChild(icn);
     parent.appendChild(child);
+
+
+    var turn_back = document.createElement('div');
+    turn_back.setAttribute('class', 'turn_back');
+    turn_back.style.position = 'absolute';
+    turn_back.style.bottom = '10';
+    turn_back.style.left = '10';
+    turn_back.style.cursor = 'pointer';
+    turn_back.style.fontSize = '30px';
+    var turn_back_icn = document.createElement('i');
+    turn_back_icn.setAttribute('class', 'fa-solid fa-circle-left');
+    turn_back.appendChild(turn_back_icn);
+
+    turn_back_icn.addEventListener('click', function() {
+        card_rotation_bro_two(ind);
+    });
+
+    back_side.appendChild(turn_back);
+
+    spn.appendChild(icccn);
+    linking.appendChild(spn);
+    linking.appendChild(spn_tw);
+    back_side.appendChild(linking);
+
+    main_card.appendChild(child);
+    main_card.appendChild(back_side);
+    parent.appendChild(main_card);
+}
+
+function custom_LC_contest() {
+    console.log('showing leetcode contests only');
+    var parent = document.getElementsByClassName('garp_contests')[0];
+    parent.innerHTML = "";
+    leet.map(i => {
+        default_code(i);
+    })
+}
+
+function custom_CC_contest() {
+    console.log('showing codechef contests only');
+    var parent = document.getElementsByClassName('garp_contests')[0];
+    parent.innerHTML = "";
+    chef.map(i => {
+        default_code(i);
+    })
+}
+
+function custom_GFG_contest() {
+    console.log('showing GeeksForGeeks contests only');
+    var parent = document.getElementsByClassName('garp_contests')[0];
+    parent.innerHTML = "";
+    gfg.map(i => {
+        default_code(i);
+    })
 }
 
 function unixToDateTime(unixTimestamp) {
-    var date = new Date(unixTimestamp * 1000);
-    var year = date.getFullYear();
-    var month = ("0" + (date.getMonth() + 1)).slice(-2);
-    var day = ("0" + date.getDate()).slice(-2);
-    var hours = ("0" + date.getHours()).slice(-2);
-    var minutes = ("0" + date.getMinutes()).slice(-2);
-    var seconds = ("0" + date.getSeconds()).slice(-2);
+    var datee = new Date(unixTimestamp * 1000);
+    var year = datee.getFullYear();
+    var month = ("0" + (datee.getMonth() + 1)).slice(-2);
+    var day = ("0" + datee.getDate()).slice(-2);
+    var hours = ("0" + datee.getHours()).slice(-2);
+    var minutes = ("0" + datee.getMinutes()).slice(-2);
 
-    var formattedDate = `${year}-${month}-${day}`;
-    var formattedTime = `${hours}:${minutes}:${seconds}`;
+    var formattedDate = `${year}-${month}-${day}  ${hours}:${minutes}`;
 
-    return `${formattedDate} ${formattedTime}`;
+    return formattedDate;
 }
 
 function StoM(seconds) {
@@ -129,90 +203,243 @@ function StoM(seconds) {
     else return `${hours} hours and ${minutes} minutes`;
 }
 
-
-
 var gfg = [
     {
-        "Title": "Job-A-Thon 35 Hiring Challenge",
-        "Title_URL": "https://practice.geeksforgeeks.org/contest/job-a-thon-35-hiring-challenge",
-        "Like": "https://www.geeksforgeeks.org/_next/image?url=https%3A%2F%2Fmedia.geeksforgeeks.org%2Fimg-practice%2Fbanner%2Fjob-a-thon-35-hiring-challenge-1719993235-desktop.png&w=828&q=75",
-        "date": "July 22, 2024",
-        "City": "08:00 PM IST"
+        name: "GFG Weekly - 165 [Rated Contest]",
+        url: "https://www.geeksforgeeks.org/events?itm_source=geeksforgeeks&itm_medium=main_header&itm_campaign=contests",
+        date: "2024-07-28 19:00",
     },
     {
-        "Title": "GFG Weekly - 165 [Rated Contest]",
-        "Title_URL": "https://practice.geeksforgeeks.org/contest/gfg-weekly-165-rated-contest",
-        "Like": "https://www.geeksforgeeks.org/_next/image?url=https%3A%2F%2Fmedia.geeksforgeeks.org%2Fimg-practice%2Fbanner%2Fgfg-weekly-165-rated-contest-1721373307-desktop.png&w=828&q=75",
-        "date": "July 28, 2024",
-        "City": "07:00 PM IST"
+        name: "GFG Weekly - 166 [Rated Contest]",
+        url: "https://www.geeksforgeeks.org/events?itm_source=geeksforgeeks&itm_medium=main_header&itm_campaign=contests",
+        date: "2024-08-04 19:00",
     },
     {
-        "Title": "GFG Weekly - 166 [Rated Contest]",
-        "Title_URL": "https://practice.geeksforgeeks.org/contest/gfg-weekly-166-rated-contest",
-        "Like": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
-        "date": "August 04, 2024",
-        "City": "07:00 PM IST"
-    },
-    {
-        "Title": "GFG Weekly - 167 [Rated Contest]",
-        "Title_URL": "https://practice.geeksforgeeks.org/contest/gfg-weekly-167-rated-contest",
-        "Like": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
-        "date": "August 11, 2024",
-        "City": "07:00 PM IST"
-    },
-    {
-        "Title": "GFG Weekly - 164 [Rated Contest]",
-        "Title_URL": "https://practice.geeksforgeeks.org/contest/gfg-weekly-164-rated-contest",
-        "Like": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
-        "date": "July 21, 2024",
-        "City": "07:00 PM IST"
-    },
-    {
-        "Title": "GFG Weekly - 163 [Rated Contest]",
-        "Title_URL": "https://practice.geeksforgeeks.org/contest/gfg-weekly-163-rated-contest",
-        "Like": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
-        "date": "July 14, 2024",
-        "City": "07:00 PM IST"
-    },
-    {
-        "Title": "GFG Weekly - 162 [Rated Contest]",
-        "Title_URL": "https://practice.geeksforgeeks.org/contest/gfg-weekly-162-rated-contest",
-        "Like": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
-        "date": "July 07, 2024",
-        "City": "07:00 PM IST"
+        name: "GFG Weekly - 167 [Rated Contest]",
+        url: "https://www.geeksforgeeks.org/events?itm_source=geeksforgeeks&itm_medium=main_header&itm_campaign=contests",
+        date: "2024-08-11 19:00",
     }
 ];
 
-
 var chef = [
     {
-        name: "START144C",
-        full_name: "Starters 144 (Rated for All)",
-        Date: "24 Jul 2024",
-        Time: "Wed 20:00",
-        duration: "Duration2 Hrs",
-        time_left: "Starts in1 Days5 Hrs",
-        url: "https://www.codechef.com/contests"
-    }, {
-        name: "START145C",
-        full_name: "Starters 145",
-        Date: "31 Jul 2024",
-        Time: "Wed 20:00",
-        duration: "2 Hrs",
-        time_left: "Starts in8 Days5 Hrs",
-        url: "https://www.codechef.com/contests"
+        name: "START145",
+        date: "2024-07-31 20:00",
+        duration: "2 Hours",
+        time_left: "Starts in 8 Days 5 Hours",
+        url: "https://www.codechef.com/"
     },
+    {
+        name: "START146",
+        date: "2024-08-07 20:00",
+        duration: "2 Hours",
+        time_left: "Starts in 8 Days 5 Hours",
+        url: "https://www.codechef.com/"
+    },
+    {
+        name: "START147",
+        date: "2024-08-14 20:00",
+        duration: "2 Hours",
+        time_left: "Starts in 8 Days 5 Hours",
+        url: "https://www.codechef.com/"
+    },
+    {
+        name: "START148",
+        date: "2024-08-21 20:00",
+        duration: "2 Hours",
+        time_left: "Starts in 8 Days 5 Hours",
+        url: "https://www.codechef.com/"
+    },
+    {
+        name: "START149",
+        date: "2024-08-28 20:00",
+        duration: "2 Hours",
+        time_left: "Starts in 8 Days 5 Hours",
+        url: "https://www.codechef.com/"
+    }
 ];
-
 
 var leet = [
     {
         name: "Biweekly Contest 136",
-        dateTime: "Saturday 8:00 PM GMT+5:30",
-        URL: "https://leetcode.com/contest/",
+        date: "2024-07-27 20:00",
+        url: "https://leetcode.com/contest/",
     }, {
         name: "Weekly Contest 408",
-        dateTime: "Sunday 8:00 AM GMT+5:30",
-        URL: "https://leetcode.com/contest/",
+        date: "2024-08-03 08:00",
+        url: "https://leetcode.com/contest/",
     },
 ];
+
+var total = [];
+function luffy() {
+    setTimeout(() => {
+        console.log('showing GeeksForGeeks contests only');
+        var parent = document.getElementsByClassName('garp_contests')[0];
+        parent.innerHTML = "";
+        total = [...CFoneMonth, ...leet, ...chef, ...gfg];
+        // Custom time sort function
+        function time_sort(a, b) {
+            return new Date(a.date || a.startTimeSeconds) - new Date(b.date || b.startTimeSeconds);
+        }
+        // Sort contests by date
+        total.sort(time_sort);
+        console.log(total);
+        total.map((i, index) => {
+            default_code(i, index);
+        });
+    }, 3000);
+}
+luffy();
+function default_code(ele, ind) {
+    var parent = document.getElementsByClassName('garp_contests')[0];
+    parent.style.border = '1px solid black';
+    parent.style.backdropFilter = 'blur(3px)';
+    parent.style.overflowX = 'hidden';
+    parent.style.overflowY = 'scroll';
+    parent.style.boxShadow = 'rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px';
+
+    var main_card = document.createElement('div');
+    main_card.setAttribute('class', `main_card ${ind}`);
+
+    var child = document.createElement('div');
+    child.setAttribute('class', `garp_childs ${ind}`);
+    // child.setAttribute('target', '_blank');
+
+    var head = document.createElement('div');
+    head.setAttribute('class', 'name_of_contest');
+    head.innerHTML = "Contest Name : " + ele.name;
+
+    var date = document.createElement('div');
+    date.setAttribute('class', 'date_of_contest');
+    date.innerHTML = "Date : " + (ele.date || ele.startTimeSeconds);
+
+    child.appendChild(head);
+    child.appendChild(date);
+
+    if (ele.duration || ele.durationSeconds) {
+        var html_dur = document.createElement('div');
+        html_dur.setAttribute('class', 'duration_of_contest');
+        html_dur.innerHTML = "Duration : " + (ele.duration || ele.durationSeconds);
+        child.appendChild(html_dur);
+    }
+
+    var icn = document.createElement('div');
+
+    if (ele.name.includes('kly Contest')) {
+        icn.style.background = "url('../assets/leetcode.png')";
+    } else if (ele.name.includes('START')) {
+        icn.style.background = "url('../assets/codechef.png')";
+    } else if (ele.name.includes('Rated Contest')) {
+        icn.style.background = "url('../assets/gfg-new-logo.png')";
+    } else if(ele.name.includes('Div')){
+        icn.style.background = "url('../assets/cf.png')";
+    }
+    icn.style.width = '45px';
+    icn.style.height = '45px';
+    icn.style.backgroundSize = 'contain';
+    icn.style.backgroundRepeat = 'no-repeat';
+    icn.style.backgroundPosition = 'center';
+    icn.style.position = 'absolute';
+    icn.style.bottom = '10px';
+    icn.style.right = '10px';
+
+    var rotate = document.createElement('div');
+    rotate.setAttribute('class', 'rotate_div');
+    rotate.innerHTML = 'More';
+
+
+    // Add event listener to rotate div
+    rotate.addEventListener('click', function() {
+        card_rotation_bro(ind);
+    });
+
+    child.appendChild(icn);
+    child.append(rotate);
+
+    var back_side = document.createElement('div');
+    back_side.setAttribute('class', `back_side ${ind}`);
+    var linking = document.createElement('a');
+    linking.setAttribute('class', 'linking');
+    var spn = document.createElement('span');
+    spn.setAttribute('class' , 'icon');
+    var icccn = document.createElement('i');
+    icccn.setAttribute('class','fa-solid fa-angle-right');
+    var spn_tw = document.createElement('span');
+    spn_tw.setAttribute('class','text');
+    spn_tw.innerHTML = "Visit Page";
+    linking.setAttribute('target' , '_blank');
+    linking.style.textDecoration = 'none';
+
+
+    var timer_div = document.createElement('div');
+    timer_div.setAttribute('class' , `timer_div ${ind}`);
+    var crocodile = monkeyDdragon((ele.date || ele.startTimeSeconds));
+    
+    
+    back_side.appendChild(timer_div);
+
+    // * links for every button
+    if(ele.name.includes('START')){
+        linking.setAttribute('href',ele.url+ele.name);
+    }
+    else if(ele.name.includes('kly Contest')){
+        linking.setAttribute('href' , ele.url);
+    }
+    else if(ele.name.includes('Round')){
+        linking.setAttribute('href' , 'https://codeforces.com/contests');
+    }
+    else if(ele.name.includes('Rated Contest')){
+        linking.setAttribute('href' , ele.url);
+    }
+    
+
+    var turn_back = document.createElement('div');
+    turn_back.setAttribute('class', 'turn_back');
+    turn_back.style.position = 'absolute';
+    turn_back.style.bottom = '10';
+    turn_back.style.left = '10';
+    turn_back.style.cursor = 'pointer';
+    turn_back.style.fontSize = '30px';
+    var turn_back_icn = document.createElement('i');
+    turn_back_icn.setAttribute('class', 'fa-solid fa-circle-left');
+    turn_back.appendChild(turn_back_icn);
+
+    turn_back_icn.addEventListener('click', function() {
+        card_rotation_bro_two(ind);
+    });
+
+    back_side.appendChild(turn_back);
+
+    spn.appendChild(icccn);
+    linking.appendChild(spn);
+    linking.appendChild(spn_tw);
+    back_side.appendChild(linking);
+
+    main_card.appendChild(child);
+    main_card.appendChild(back_side);
+    parent.appendChild(main_card);
+}
+
+function card_rotation_bro(ind) {
+    var card = document.getElementsByClassName('main_card')[ind];
+    card.style.transform = "rotateY(180deg)";
+}
+function card_rotation_bro_two(ind) {
+    var card = document.getElementsByClassName('main_card')[ind];
+    card.style.transform = "rotateY(0deg)";
+}
+
+function monkeyDdragon(contime) {
+    // console.log(contime);
+
+    var now = new Date();
+    var contestDate = new Date(contime);
+    var diff = contestDate - now;
+    var hours = Math.floor(diff / (1000 * 60 * 60));
+    var minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+
+    console.log("Time left: " + hours + " hours and " + minutes + " minutes ");
+    return {hours , minutes};
+}
+
