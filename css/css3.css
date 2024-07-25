@@ -513,6 +513,18 @@ body{
     align-items: center;
     overflow: hidden;
 }
+.cchf-h{
+    width: 90% ;
+    height: 60%  !important;
+    background-color: rgb(91, 53, 53);
+    display: flex !important;
+    /* background-image: url("../assets/ccf.png");
+    background-size: cover; */
+    justify-content: center;
+    align-items: center;
+    position:relative;
+    border-radius : 15px;
+}
 .cchf{
     width: 90% ;
     height: 90%  !important;
@@ -539,9 +551,31 @@ body{
     border-radius : 15px;
 
 }
+.leet-h{
+    width: 90% ;
+    height: 60%  !important;
+    background-color: rgb(247, 186, 73);
+    display: flex !important;
+    /* background-image: url("../assets/ccf.png");
+    background-size: cover; */
+    justify-content: center;
+    align-items: center;
+    position:relative;
+    border-radius : 15px;
+}
 .gfgh{
     width: 90% ;
     height: 90%  !important;
+    background-color: rgb(90, 240, 90);
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    position:relative;
+    border-radius : 15px;
+}
+.gfgh-h{
+    width: 90% ;
+    height: 60%  !important;
     background-color: rgb(90, 240, 90);
     display: flex !important;
     justify-content: center;
@@ -577,7 +611,40 @@ body{
     position:relative;
     border-radius : 15px;
 }
+.cfff-h{
+    width: 90% ;
+    height: 60%   !important;
+    background-color: rgb(240, 74, 74);
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    position:relative;
+    border-radius : 15px;
+}
 .cchf3 , .lee3 , .gfgh3 , .cfff3{
+    position: absolute;
+    bottom: 10%;
+    right: 8%;
+    font-size: 18px;
+}
+.cchf1-h , .lee1-h , .gfgh1-h , .cfff1-h{
+    position: absolute;
+    top: 10%;
+    left: 5%;
+}
+.cchf2{
+    height: 70px;
+    width: 70px;
+    padding: 5px 10px;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 50;
+    left: 50;
+}
+.cchf3-h , .lee3-h , .gfgh3-h , .cfff3-h{
     position: absolute;
     bottom: 10%;
     right: 8%;
@@ -586,7 +653,7 @@ body{
 .cchf1 , .lee1 , .gfgh1 , .cfff1{
     position: absolute;
     top: 10%;
-    left: 8%;
+    left: 5%;
 }
 .slick-list {
     width: 80%;
@@ -660,6 +727,17 @@ li button{
     .header{
         justify-content: space-around;
     }
+}
+@media screen and (max-width:647px){
+    .naru{
+        width: 130px;
+        height: 70px;
+    }
+    .naru1{
+        width: 220px;
+        height: 50px;
+    }
+
 }
 @media screen and (max-width:584px){
     .dashboard-head-hide{
