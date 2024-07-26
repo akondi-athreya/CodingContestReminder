@@ -1,19 +1,329 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DashBoard</title>
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Arsenal+SC:ital,wght@0,400;0,700;1,400;1,700&family=Karla:ital,wght@0,200..800;1,200..800&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="../css/css3.css">
-</head>
-<body>
-    <div class="otsotsuki sagemode">
-        <div class="indra"></div>
-        <div class="sixpath"></div>
-        <div class="kurama"></div>
-
-
-    </div>
     
+</head>
+
+<body>
+    <div class="header">
+        <div class="logo"><i class="fa-solid fa-stopwatch"></i></div>
+        <div class="sect">
+            <div class="home">Home</div>
+            <div class="dashboard">Dashboard</div>
+            <div class="upcoming">Upcoming</div>
+            <div class="Todo">To-do List</div>
+        </div>
+        <div class="bars">
+            <i class="fa-solid fa-bars"></i>
+            <div class="parent">
+                <br>
+                <div class="hovers">Profile</div>
+                <hr>
+                <div class="hovers">Home</div>
+                <hr>
+                <div class="hovers">Dashboard</div>
+                <hr>
+                <div class="hovers">Upcoming</div>
+                <hr>
+                <div class="hovers">To-do List</div>
+                <hr>
+            </div>
+        </div>
+        <div class="profile"><i class="fa-solid fa-user"></i></div>
+    </div>
+    <div class="dashboard-main">
+        <div class="dashboard-main-hide">
+            <div class="dashboard-prof-hide">
+                <div class="profii-hide">
+                    <div class="pro-hide"> <img class="juuii" src="../assets/ppf.jpg" alt=""></div>
+                    <div class="pro-dat">UserName:AyyappaSwamy</div>
+                </div>
+
+            </div>
+            <div class="dashboard-data-main-hide">
+                <div class="dashboard-head-hide">
+                    <div class="dash_h1" id="a" onclick="ma()">Main</div>
+                    <div class="dash_h1" id="b" onclick="badg()">Badges</div>
+                    <div class="dash_h1" id="c" onclick="prof()">Coding Prof</div>
+                </div>
+                <div class="dash-sli-hide">
+                    <div class="dash-sli--hh">
+                        <div class="dash-pr-h">
+                            <div class="cchf-h">
+                                <div class="cchf1-h" style="position: absolute; top:-5px;"><img class="naru" src="../assets/codecheffull.png" alt=""></div>
+                                <div class="cchf2-h">
+                                    <div class="dat1">Contest-Rating:1650</div>
+                                    <div class="dat1">3-⭐</div>
+                                </div>
+                                <div class="cchf3-h">ayyappa_19</div>
+                            </div>
+                        </div>
+                        <div class="dash-pr-h">
+                            <div class="leet-h">
+
+                                <div class="lee1-h"><img class="naru2"  src="../assets/LeetCode_full.png" alt=""></div>
+                                <div class="lee2-h">
+                                    <div class="dat2">Contest-Rating:1686</div>
+                                </div>
+                                <div class="lee3-h">ayyappa_19</div>
+                            </div>
+                        </div>
+                        <div class="dash-pr-h">
+                            <div class="gfgh-h">
+
+                                <div class="gfgh1-h" style="position: absolute; top:2px; left: 2%;"><img class="naru"  src="../assets/gfgfull.png" alt=""></div>
+                                <div class="gfgh2-h">
+                                    Monthly-Code-Score:26
+                                </div>
+                                <div class="gfgh3-h">ayyappa_19</div>
+                            </div>
+
+                        </div>
+                        <div class="dash-pr-h">
+                            <div class="cfff-h">
+                                <div class="cfff1-h"><img class="naru1" src="../assets/codeforcesfull.png" alt=""></div>
+                                <div class="cfff2-h">
+                                    Contest-Rating:873
+                                </div>
+                                <div class="cfff3-h">ayyappa_19</div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="bg">
+                        <div class="bg-hl">
+                            <div class="lee-h">Leetcode</div>
+                            <div class="ds-lh" onclick="lh()">+</div>
+                        </div>
+                        <div class="bg-hl-1">
+                            <div class="bd"><img class="alee" src="../assets/100dayleet.png" alt=""></div>
+                                <div class="bd"> <img class="alee" src="../assets/50dayleet.png" alt=""></div>
+                                <div class="bd"><img class="alee" src="../assets/marleet.png" alt=""></div>
+                                <div class="bd"><img  class="alee" src="../assets/febleet.png" alt=""></div>
+                        </div>
+                        <div class="bg-hc">
+                            <div class="che-h">Codechef</div>
+                            <div class="ds-ch" onclick="ch()">+</div>
+                        </div>
+                        <div class="bg-hc-1"> </div>
+                        <div class="bg-hcf">
+                            <div class="cf-h">CodeForces</div>
+                            <div class="ds-cfh" onclick="cfh()">+</div>
+                        </div>
+                        <div class="bg-hcf-1">Nothing to display</div>
+
+
+                    </div>
+                    <div class="pf">
+                        <div class="bg-hl">
+                            <div class="lee-h">Leetcode</div>
+                            <div class="ds-lh" onclick="lh()">+</div>
+                        </div>
+                        <div class="bg-hl-1">
+                            <div class="pf-hl-1">
+                            <div class="prf-sl--1"><img class="chiju" src="../assets/LeetCode_full.png" alt=""></div>
+                            <div class="prf-sl-0">Contest-Rating :1686</div>
+                            <div class="prf-sl-1">Problems-Solved :267</div>
+                            <div class="prf-sl-2">Easy:105</div>
+                            <div class="prf-sl-3">Medium:142</div>
+                            <div class="prf-sl-4">Hard:20</div>
+                            </div>
+                        </div>
+                        <div class="bg-hc">
+                            <div class="che-h">Codechef</div>
+                            <div class="ds-ch" onclick="ch()">+</div>
+                        </div>
+                        <div class="bg-hc-1">
+                            <div class="pf-hc-1">
+                                <div class="prf-sc--1"><img class="chiju" src="../assets/codecheffull.png" alt=""></div>
+                            <div class="prf-sc-0">Contest-Rating :1650</div>
+                            <div class="prf-sc-1">Problems-Solved :217</div>
+                            <div class="prf-sc-2">Easy:105</div>
+                            <div class="prf-sc-3">Medium:142</div>
+                            <div class="prf-sc-4">Hard:10</div>
+                            </div>
+                        </div>
+                        <div class="bg-hcf">
+                            <div class="cf-h">Geeksforgeeks</div>
+                            <div class="ds-cfh" onclick="cfh()">+</div>
+                        </div>
+                        <div class="bg-hcf-1">
+                            <div class="pf-hcf-1">
+                                <div class="prf-sg--1"><img class="chiju" src="../assets/gfgfull.png" alt=""></div>
+                            <div class="prf-sg-0">Contest-Rating :826</div>
+                            <div class="prf-sg-1">Problems-Solved :124</div>
+                            <div class="prf-sg-2">Easy:60</div>
+                            <div class="prf-sg-3">Medium:49</div>
+                            <div class="prf-sg-4">Hard:15</div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </div>
+        <div class="dashboard-main-show">
+            <div class="dashboard-prof">
+                <div class="profii">
+                    <div class="pro"><img class="juuii" src="../assets/ppf.jpg" alt=""></div>
+                    
+
+                </div>
+                <div class="pro-d">
+                    <div class="main-d">AyyappaSwamy</div>
+                    <div class="cpu">
+                        <div class="cpu-1"><img class="juju" src="../assets/leetcode.png" alt="">: Ayyappa-19</div>
+                        <div class="cpu-2"><img class="juju" src="../assets/codechef.png" alt="">:ayyappa19</div>
+                        <div class="cpu-3"><img class="juju" src="../assets/cf.png" alt="">:ayyappa19</div>
+                        <div class="cpu-4"><img class="juju" src="../assets/gfg-new-logo.png" alt="">:22a91aw9km</div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="dashboard-data-main-show">
+                <div class="dashboard-head">
+                    <div class="dash_h" id="d" onclick="ma()">Main</div>
+                    <div class="dash_h" id="e" onclick="badg()">Badges</div>
+                    <div class="dash_h" id="f" onclick="prof()">Coding Prof</div>
+
+                </div>
+                <div class="mental">
+                    <div class="dash-main-sli">
+                        <div class="dash-sli">
+                            <div class="dash-pr">
+                                <div class="cchf">
+                                    <div class="cchf1" style="position: absolute; top:-5px;"><img style="width: 150px; height: 80px; " src="../assets/codecheffull.png" alt=""></div>
+                                    <div class="cchf2">
+                                        <div class="dat1">Contest-Rating:1650</div>
+                                        <div class="dat1">3-⭐</div>
+                                    </div>
+                                    <div class="cchf3">ayyappa_19</div>
+                                </div>
+                            </div>
+                            <div class="dash-pr">
+                                <div class="leet">
+
+                                    <div class="lee1"><img style="width: 200px; height: 50px;" src="../assets/LeetCode_full.png" alt=""></div>
+                                    <div class="lee2"><div class="dat2">Contest-Rating:1686</div></div>
+                                    <div class="lee3">ayyappa_19</div>
+                                </div>
+                            </div>
+                            <div class="dash-pr">
+                                <div class="gfgh">
+
+                                    <div class="gfgh1" style="position: absolute; top:2px; left: 2%;"><img style="width: 110px; height: 60px;" src="../assets/gfgfull.png" alt=""></div>
+                                    <div class="gfgh2">Monthly-Code-Score:26</div>
+                                    <div class="gfgh3">ayyappa_19</div>
+                                </div>
+                            </div>
+                            <div class="dash-pr">
+                                <div class="cfff">
+
+                                    <div class="cfff1"><img src="../assets/codeforcesfull.png" alt=""></div>
+                                    <div class="cfff2">Contest-Rating:873</div>
+                                    <div class="cfff3">ayyappa_19</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dash-chart">
+                        <div id="dash-ch"></div>
+                    </div>
+                    <div class="bdg">
+                        <div class="bdg-sl">
+                            <div class="sl1"><img class="chiju" src="../assets/LeetCode_full.png" alt=""></div>
+                            <div class="sl2">
+                                <div class="bd"><img class="alee" src="../assets/100dayleet.png" alt=""></div>
+                                <div class="bd"> <img class="alee" src="../assets/50dayleet.png" alt=""></div>
+                                <div class="bd"><img class="alee" src="../assets/marleet.png" alt=""></div>
+                                <div class="bd"><img  class="alee" src="../assets/febleet.png" alt=""></div>
+                            </div>
+                        </div>
+                        <div class="bdg-sc"></div>
+                        <div class="bdg-scf"></div>
+
+                    </div>
+                    <div class="prf">
+                        <div class="prf-sl">
+                            <div class="prf-sl--1"><img class="chiju" src="../assets/LeetCode_full.png" alt=""></div>
+                            <div class="prf-sl-0">Contest-Rating :1686</div>
+                            <div class="prf-sl-1">Problems-Solved :267</div>
+                            <div class="prf-sl-2">Easy:105</div>
+                            <div class="prf-sl-3">Medium:142</div>
+                            <div class="prf-sl-4">Hard:20</div>
+                        </div>
+                        <div class="prf-sc">
+                            <div class="prf-sc--1"><img class="chiju" src="../assets/codecheffull.png" alt=""></div>
+                            <div class="prf-sc-0">Contest-Rating :1650</div>
+                            <div class="prf-sc-1">Problems-Solved :217</div>
+                            <div class="prf-sc-2">Easy:105</div>
+                            <div class="prf-sc-3">Medium:142</div>
+                            <div class="prf-sc-4">Hard:10</div>
+                        </div>
+                        <div class="prf-scf">
+                            <div class="prf-scf--1"><img class="chiju" src="../assets/codeforcesfull.png" alt=""></div>
+                            <div class="prf-scf-0">Contest-Rating :843</div>
+                            <div class="prf-scf-1">Problems-Solved :06</div>
+                            <div class="prf-scf-2">Easy:05</div>
+                            <div class="prf-scf-3">Medium:01</div>
+                            <div class="prf-scf-4">Hard:00</div>
+                        </div>
+                        <div class="prf-sg">
+                            <div class="prf-sg--1"><img class="chiju" src="../assets/gfgfull.png" alt=""></div>
+                            <div class="prf-sg-0">Contest-Rating :826</div>
+                            <div class="prf-sg-1">Problems-Solved :124</div>
+                            <div class="prf-sg-2">Easy:60</div>
+                            <div class="prf-sg-3">Medium:49</div>
+                            <div class="prf-sg-4">Hard:15</div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+            <!-- <div class="dashboard-prof-hide"></div> -->
+
+            <!-- <div class="dashboard-head-hide">
+                <div class="dash_h1">Main</div>
+                <div class="dash_h1">Badges</div>
+                <div class="dash_h1">Coding Prof</div>
+                </div> -->
+
+
+        </div>
+    </div>
+
 </body>
+
+</html>
+
+
+
+
+<script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<script src='https://cdn.plot.ly/plotly-2.34.0.min.js'></script>
+<script src="/js/js3.js"></script>
+</body>
+
 </html>
