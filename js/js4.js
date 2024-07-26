@@ -3,31 +3,31 @@
 var codeforces_data = {};
 let CFoneMonth = [];
 
-async function fun() {
-    try {
-        const response = await fetch('https://codeforces.com/api/contest.list');
-        const data = await response.json();
-        codeforces_data = {};
-        codeforces_data = data;
-        CFoneMonth = [];
-        let j = 0;
-        while (codeforces_data.result[j] && codeforces_data.result[j].phase === "BEFORE") {
-            let contest = codeforces_data.result[j];
-            contest.startTimeSeconds = unixToDateTime(contest.startTimeSeconds);
-            contest.durationSeconds = StoM(contest.durationSeconds);
-            CFoneMonth.push(contest);
-            j++;
-            console.log(contest);
-        }
-        CFoneMonth.reverse();
-        console.log("CF");
-        console.log(CFoneMonth);
+// async function fun() {
+//     try {
+//         const response = await fetch('https://codeforces.com/api/contest.list');
+//         const data = await response.json();
+//         codeforces_data = {};
+//         codeforces_data = data;
+//         CFoneMonth = [];
+//         let j = 0;
+//         while (codeforces_data.result[j] && codeforces_data.result[j].phase === "BEFORE") {
+//             let contest = codeforces_data.result[j];
+//             contest.startTimeSeconds = unixToDateTime(contest.startTimeSeconds);
+//             contest.durationSeconds = StoM(contest.durationSeconds);
+//             CFoneMonth.push(contest);
+//             j++;
+//             console.log(contest);
+//         }
+//         CFoneMonth.reverse();
+//         console.log("CF");
+//         console.log(CFoneMonth);
         
         
-    } catch (error) {
-        console.log(error);
-    }
-}
+//     } catch (error) {
+//         console.log(error);
+//     }
+// }
 
 // fun();
 document.addEventListener('DOMContentLoaded', () => {
@@ -200,7 +200,7 @@ function luffy() {
     document.getElementsByClassName('loader')[0].style.display = 'flex';
 
     setTimeout(() => {
-        fun().then(() => {
+        // fun().then(() => {
             console.log('showing contests');
             document.getElementsByClassName('loader')[0].style.display = 'none'; // Hide the loader animation
 
@@ -217,7 +217,7 @@ function luffy() {
             total.map((i, index) => {
                 default_code(i, index);
             });
-        });
+        // });
     }, 3000);
 }
 luffy();
@@ -229,12 +229,11 @@ function default_code(ele, ind) {
     parent.style.overflowY = 'scroll';
     parent.style.boxShadow = 'rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px';
 
-    var main_card = document.createElement('div');
+    var main_card = document.createElement('a');
     main_card.setAttribute('class', `main_card ${ind}`);
 
     var child = document.createElement('div');
     child.setAttribute('class', `garp_childs ${ind}`);
-    // child.setAttribute('target', '_blank');
 
     var head = document.createElement('div');
     head.setAttribute('class', 'name_of_contest');
@@ -244,15 +243,20 @@ function default_code(ele, ind) {
     date.setAttribute('class', 'date_of_contest');
     date.innerHTML = "Date : " + (ele.date || ele.startTimeSeconds);
 
-    child.appendChild(head);
-    child.appendChild(date);
+    var mtr = document.createElement('div');
+    mtr.setAttribute('class' , 'child_mtr_kizaru');
+    mtr.appendChild(head);
+    mtr.appendChild(date);
+
 
     if (ele.duration || ele.durationSeconds) {
         var html_dur = document.createElement('div');
         html_dur.setAttribute('class', 'duration_of_contest');
         html_dur.innerHTML = "Duration : " + (ele.duration || ele.durationSeconds);
-        child.appendChild(html_dur);
+        mtr.appendChild(html_dur);
     }
+
+    child.append(mtr);
 
     var icn = document.createElement('div');
 
@@ -278,37 +282,11 @@ function default_code(ele, ind) {
     rotate.setAttribute('class', 'rotate_div');
     rotate.innerHTML = 'More';
 
-
-    // Add event listener to rotate div
-    rotate.addEventListener('click', function() {
-        card_rotation_bro(ind);
-    });
-
     child.appendChild(icn);
     child.append(rotate);
 
-    var back_side = document.createElement('div');
-    back_side.setAttribute('class', `back_side ${ind}`);
-    var linking = document.createElement('a');
-    linking.setAttribute('class', 'linking');
-    var spn = document.createElement('span');
-    spn.setAttribute('class' , 'icon');
-    var icccn = document.createElement('i');
-    icccn.setAttribute('class','fa-solid fa-angle-right');
-    var spn_tw = document.createElement('span');
-    spn_tw.setAttribute('class','text');
-    spn_tw.innerHTML = "Visit Page";
-    linking.setAttribute('target' , '_blank');
-    linking.style.textDecoration = 'none';
-
-
     var timer_div = document.createElement('div');
     timer_div.setAttribute('class' , `timer_div ${ind}`);
-
-    var still = document.createElement('div');
-    still.setAttribute('class' , 'still');
-    still.innerHTML = "Time left";
-    back_side.appendChild(still);
 
     function updateCountdown() {
         var now = new Date();
@@ -320,66 +298,41 @@ function default_code(ele, ind) {
             clearInterval(intervalId);
             return;
         }
-
         var hours = Math.floor(diff / (1000 * 60 * 60));
         var minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
         var seconds = Math.floor((diff % (1000 * 60)) / 1000);
         timer_div.innerHTML = `${hours} : ${minutes} : ${seconds}`;
     }
 
+
     var intervalId = setInterval(updateCountdown, 1000);
     updateCountdown();
 
     
-    back_side.appendChild(timer_div);
+    child.appendChild(timer_div);
 
+    
     // * links for every button
     if(ele.name.includes('START')){
-        linking.setAttribute('href',ele.url+ele.name);
+        main_card.setAttribute('href' , ele.url);
     }
     else if(ele.name.includes('kly Contest')){
-        linking.setAttribute('href' , ele.url);
+        main_card.setAttribute('href' , ele.url);
     }
     else if(ele.name.includes('Round')){
-        linking.setAttribute('href' , 'https://codeforces.com/contests');
+        main_card.setAttribute('href' , 'https://codeforces.com/contests');
     }
     else if(ele.name.includes('Rated Contest')){
-        linking.setAttribute('href' , ele.url);
+        main_card.setAttribute('href' , ele.url);
     }
-    var turn_back = document.createElement('div');
-    turn_back.setAttribute('class', 'turn_back');
-    
-    var turn_back_icn = document.createElement('i');
-    turn_back_icn.setAttribute('class', 'fa-solid fa-circle-left');
-    turn_back.appendChild(turn_back_icn);
+    main_card.setAttribute('target' , '_blank');
 
-    turn_back_icn.addEventListener('click', function() {
-        card_rotation_bro_two(ind);
-    });
-
-    back_side.appendChild(turn_back);
-
-    spn.appendChild(icccn);
-    linking.appendChild(spn);
-    linking.appendChild(spn_tw);
-    back_side.appendChild(linking);
 
     main_card.appendChild(child);
-    main_card.appendChild(back_side);
     parent.appendChild(main_card);
 }
 
-function card_rotation_bro(ind) {
-    var card = document.getElementsByClassName('main_card')[ind];
-    card.style.transform = "rotateY(180deg)";
-}
-function card_rotation_bro_two(ind) {
-    var card = document.getElementsByClassName('main_card')[ind];
-    card.style.transform = "rotateY(0deg)";
-}
-
 function monkeyDdragon(contime) {
-
     var now = new Date();
     var contestDate = new Date(contime);
     var diff = contestDate - now;

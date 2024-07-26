@@ -75,10 +75,10 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    align-items: center;
+    /* align-items: center; */
     border-radius: 15px;
     gap: 40px;
-    row-gap: 50px;
+    row-gap: 40px;
     padding-bottom: 50px;
 }
 
@@ -95,6 +95,7 @@ body {
     transform-style: preserve-3d;
     transition: transform 1s;
     margin-top: 50px;
+    text-decoration: none;
 }
 
 .garp_childs {
@@ -103,19 +104,27 @@ body {
     box-shadow: inset 0 0 10px grey;
     border-radius: 12px;
     display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: flex-start;
+    align-items: center;
     cursor: pointer;
     text-decoration: none;
     position: relative;
     background-color: #EAF0F2;
-    /* border: 1px solid black; */
     padding: 25px;
     overflow: hidden;
     transition: all 1s;
     backface-visibility: hidden;
     z-index: 2;
+}
+.child_mtr_kizaru{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    position: absolute;
+    height: fit-content;
+    width: fit-content;
+    row-gap: 20px;
+    top: 30;
 }
 
 .back_side {
@@ -223,13 +232,12 @@ body {
     cursor: pointer;
     font-size: 25px;
     position: absolute;
-    left: 10;
-    bottom: 5;
+    left: 30;
+    bottom: 10;
     color: black;
     border-radius: 8px;
     font-size: 15px;
     padding: 5px 10px;
-    /* border: 1px solid black; */
     font-family: 'Poppins';
     transition: all 0.3s;
 }
@@ -290,19 +298,26 @@ body {
 
 .timer_div {
     border: 1px solid black;
-    height: 50px;
-    width: 180px;
+    height: fit-content;
+    width: fit-content;
     position: absolute;
-    left: 30;
-    top: 50;
+    left: 100;
+    bottom: 10;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 30px;
+    font-size: 20px;
     font-family: 'Lato';
     border-radius: 12px;
     background-color: #003566;
     color: white;
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+    padding: 5px 15px;
+    z-index: 999;
+}
+.garp_childs:hover .timer_div{
+    opacity: 1;
 }
 
 .still {
@@ -323,6 +338,7 @@ body {
     cursor: pointer;
     font-size: 30px;
 }
+
 
 
 
@@ -589,14 +605,14 @@ body {
     }
 
     .main_card {
-        height: 225px;
-        width: 400px;
+        height: 200px;
+        width: 350px;
     }
 
     .name_of_contest,
     .duration_of_contest,
     .date_of_contest {
-        font-size: 20px;
+        font-size: 18px;
     }
 
     .rotate_div {
@@ -611,8 +627,8 @@ body {
     }
 
     .timer_div {
-        top: 120px;
-        left: 170px;
+        bottom: 20px;
+        left: 130px;
         transform: scale(1.2);
     }
 
@@ -734,14 +750,17 @@ body {
     }
 
     .main_card {
-        height: 200px;
-        width: 450px;
+        height: 180px;
+        width: 350px;
     }
 
     .name_of_contest,
     .duration_of_contest,
     .date_of_contest {
         font-size: 16px;
+    }
+    .timer_div{
+        bottom: 10;
     }
 
 
@@ -785,7 +804,7 @@ body {
     .rotate_div {
         padding: 2px;
         left: 10;
-        bottom: 8;
+        bottom: 10;
     }
 
     .garp_item_docker {
@@ -818,12 +837,9 @@ body {
         font-size: 30px;
     }
     .timer_div{
-        left: 20%;
-        top: 40%;
-        font-size: 25px;
-        width: fit-content;
-        height: fit-content;
-        padding: 5px 10px;
+        left: 80px;
+        bottom: 10;
+        font-size: 14px;
     }
     .turn_back{
         font-size: 20px;
@@ -833,6 +849,9 @@ body {
     .linking{
         right: 30;
         bottom: 20;
+    }
+    .child_mtr_kizaru{
+        width: 90%;
     }
 }
 
@@ -904,12 +923,9 @@ body {
         font-size: 30px;
     }
     .timer_div{
-        left: 20%;
-        top: 40%;
-        font-size: 25px;
-        width: fit-content;
-        height: fit-content;
-        padding: 5px 10px;
+        left: 35%;
+        bottom: 10;
+        
     }
     .turn_back{
         font-size: 20px;
