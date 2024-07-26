@@ -37,7 +37,7 @@ document.getElementsByTagName("textarea")[0].addEventListener('keypress', functi
 // Load tasks from localStorage on page load
 window.onload = function() {
   loadTasks();
-  updateDeleteCount();
+  // updateDeleteCount();
 };
 
 function fun() {
@@ -162,7 +162,16 @@ function addTaskToDOM(task) {
   });
 
   card.appendChild(check);
+  // console.log(card);
   root.appendChild(card);
+  
+  var arr =document.querySelectorAll(".card");
+  arr.forEach((ele)=>
+  {
+    ele.setAttribute("data-aos","slide-right")
+    
+  })
+ 
 }
 
 function deleteTask(id) {
@@ -195,3 +204,35 @@ for(var i=0;i<=dc;i++)
   const gold=document.getElementsByClassName("fa-star")[i].style.color="gold";
 }
 }
+
+
+
+// mouse hover
+document.addEventListener('DOMContentLoaded', () => {
+  const box = document.getElementsByTagName('body')[0];
+  const hoverBorder = document.getElementById('hoverBorder');
+
+  box.addEventListener('mousemove', (event) => {
+      const rect = box.getBoundingClientRect();
+      const x = event.clientX - rect.left;
+      const y = event.clientY - rect.top;
+
+      hoverBorder.style.display = 'flex';
+      hoverBorder.style.top = (rect.top + y - 5) + 'px';
+      hoverBorder.style.left = (rect.left + x - 5) + 'px';
+  });
+
+  box.addEventListener('mouseleave', () => {
+      hoverBorder.style.display = 'none';
+  });
+});
+
+// github  
+
+// var left1=document.getElementsByClassName("timeset")[0];
+// left1.setAttribute("data-aos","slide-right")
+// left1.setAttribute("data-aos-duration","1000")
+
+// var right1=document.getElementsByClassName("notification")[0];
+// right1.setAttribute("data-aos","slide-left")
+// right1.setAttribute("data-aos-duration","1000")
