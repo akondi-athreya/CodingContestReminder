@@ -272,20 +272,23 @@ body{
     justify-content: center;
     display:none;
 }
-.pf-hl-1{
+.pf-hl-1,.pf-hc-1,.pf-hcf-1{
     width: 100%;
     height: 18svh;
     background-color: skyblue;
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 
     /* display: none; */
 }
-.pf-hc-1{
+/* .pf-hc-1{
     width: 100%;
     height: 18svh;
     background-color: skyblue;
     display: flex;
-    /* display: none; */
+    /* display: none; 
 
 
 }
@@ -294,9 +297,9 @@ body{
     height: 18svh;
     background-color: skyblue;
     display: flex;
-    /* display: none; */
+    /* display: none; 
 
-}
+} */
 .dash-sli--hh{
     width: 80% ;
     height: 45svh;
@@ -325,29 +328,56 @@ body{
 }
 
 .profii{
-    width: 150%;
-    height: 50svh;
+    width: 100%;
+    height: 40svh;
     /* background-color: aqua; */
     display: flex;
     align-items: end;
     justify-content: center;
 
 }
- .det{
+ .main-d{
     width:100% ;
+    height: 10svh;
     color: white;
-    font-size: 15px;
+    font-size: 20px;
     font-family: cursive;
     display: flex;
     align-items: center;
     justify-content: center;
 } 
-
-.pro{
+.cpu{
+    width: 100% ;
+    height: 40svh;
+    color: black;
+    font-size: 20px;
+    font-family: cursive;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: end;
+    
+}
+.cpu-1,.cpu-2,.cpu-3,.cpu-4{
+    width: 100%;
+   /* height: 10svh; */
+    color: black;
+    font-size: 15px;
+    font-family: cursive;
+    display: flex;
+    /* flex-direction: column; */
+    align-items: start;
+}
+.juju{
+    width: 20px;
+    height: 20px;
+}
+.pro,.pro-hide{
     width: 200px;
     height: 200px;
     background-color: azure;
     border-radius: 100px;
+    overflow: hidden;
 }
 .dashboard-prof-hide{
     width: 100%;
@@ -357,21 +387,25 @@ body{
     justify-content: left;
 
 }
-.pro-hide
-{
-    width: 200px;
-    height: 200px;
-    background-color: azure;
-    border-radius: 100px;
 
-}
 .profii-hide{
     width: 100%;
     height: 100%;
     background-color: black;
     display: flex;
     align-items: center;
+    justify-content: space-between;
+
+}
+.pro-dat{
+    width: 80%;
+    height: 100%;
+    display: flex;
+    align-items: end;
     justify-content: start;
+    color: skyblue;
+    font-size: 20px;
+    font-family: cursive;
 
 }
 .dashboard-data-main-hide{
@@ -459,6 +493,21 @@ body{
     display: none;
 
 }
+ .prf-sl--1{
+    width: 100%;
+    height: 3svh;
+    display: flex;
+
+ }
+ .prf-sl-0,.prf-sl-1,.prf-sl-2,.prf-sl-3,.prf-sl-4{
+    width: 100%;
+    height: 3svh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+ }
+ 
 .prf-sl{
     width: 95%;
     height: 19svh;
@@ -481,6 +530,20 @@ body{
     border-radius: 10px;
     /* display: none; */
 }
+.prf-sc--1{
+    width: 100%;
+    height: 3svh;
+    display: flex;
+
+ }
+ .prf-sc-0,.prf-sc-1,.prf-sc-2,.prf-sc-3,.prf-sc-4{
+    width: 100%;
+    height: 3svh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+ }
 
 .prf-scf{
     width: 95%;
@@ -493,6 +556,20 @@ body{
     border-radius: 10px;
     /* display: none; */
 }
+.prf-scf--1{
+    width: 100%;
+    height: 3svh;
+    display: flex;
+
+ }
+ .prf-scf-0,.prf-scf-1,.prf-scf-2,.prf-scf-3,.prf-scf-4{
+    width: 100%;
+    height: 3svh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+ }
 .prf-sg{
     width: 95%;
     height: 19svh;
@@ -504,6 +581,20 @@ body{
     border-radius: 10px;
     /* display: none; */
 }
+.prf-sg--1{
+    width: 100%;
+    height: 3svh;
+    display: flex;
+
+ }
+ .prf-sg-0,.prf-sg-1,.prf-sg-2,.prf-sg-3,.prf-sg-4{
+    width: 100%;
+    height: 3svh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+ }
 .dash-main-sli{
     width: 100%;
     height: 45svh;
@@ -652,7 +743,7 @@ body{
     left: 5%;
 }
 
-.cchf2{
+.cchf2,.cchf2-h{
     height: 100px;
     width: 300px;
     padding: 5px 10px;
@@ -665,7 +756,7 @@ body{
     top: 50;
     left: 50;
 }
-.lee2{
+.lee2,.lee2-h{
     height: 100px;
     width: 300px;
     padding: 5px 10px;
@@ -678,7 +769,7 @@ body{
     top: 50;
     left: 50;
 }
-.gfgh2{
+.gfgh2,.gfgh2-h{
     height: 100px;
     width: 300px;
     padding: 5px 10px;
@@ -691,7 +782,8 @@ body{
     top: 50;
     left: 50;
 }
-.cfff2{
+
+.cfff2,.cfff2-h{
     height: 100px;
     width: 300px;
     padding: 5px 10px;
@@ -787,6 +879,10 @@ li button{
     width: 80px;
     height: 80px;
 }
+.juuii{
+    width: 200px;
+    height: 200px;
+}
 
 
 @media screen and (max-width:940px){
@@ -820,17 +916,7 @@ li button{
         justify-content: space-around;
     }
 }
-@media screen and (max-width:647px){
-    .naru{
-        width: 130px;
-        height: 70px;
-    }
-    .naru1{
-        width: 220px;
-        height: 50px;
-    }
 
-}
 @media screen and (max-width:584px){
     .dashboard-head-hide{
         font-size: 20px;
@@ -844,18 +930,7 @@ li button{
     border-radius: 75px;
    }
 }
-@media screen and (max-width:560px){
-    .naru1{
-        width: 80px;
-        height:30px;
 
-    }
-    .naru2{
-        width: 80px;
-        height:30px;
-    }
-    
-}
 @media screen and (max-width:450px){
     .alee{
         width: 60px;
