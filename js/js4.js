@@ -7,9 +7,9 @@ async function fun() {
     try {
         const response = await fetch('https://codeforces.com/api/contest.list');
         const data = await response.json();
+        codeforces_data = {};
         codeforces_data = data;
-        // console.log(codeforces_data);
-        
+        CFoneMonth = [];
         let j = 0;
         while (codeforces_data.result[j] && codeforces_data.result[j].phase === "BEFORE") {
             let contest = codeforces_data.result[j];
@@ -17,15 +17,21 @@ async function fun() {
             contest.durationSeconds = StoM(contest.durationSeconds);
             CFoneMonth.push(contest);
             j++;
+            console.log(contest);
         }
         CFoneMonth.reverse();
+        console.log("CF");
+        console.log(CFoneMonth);
+        
+        
     } catch (error) {
         console.log(error);
     }
 }
 
-fun();
+// fun();
 document.addEventListener('DOMContentLoaded', () => {
+    document.getElementsByClassName('loader')[0].style.display = 'none';
     const cfButton = document.querySelector('#CF');
     if (cfButton) {
         cfButton.addEventListener('click', custom_CF_contest);
@@ -45,10 +51,21 @@ document.addEventListener('DOMContentLoaded', () => {
     if (gfgButton) {
         gfgButton.addEventListener('click', custom_GFG_contest);
     }
+
     const allShow = document.querySelector('#shinchan');
     if (allShow) {
-        allShow.addEventListener('click', luffy);
+        allShow.addEventListener('click', () => {
+            var parent = document.getElementsByClassName('garp_contests')[0];
+            parent.innerHTML = "";
+            luffy();
+        });
     }
+
+    // Show the loader animation
+    document.getElementsByClassName('loader')[0].style.display = 'flex';
+
+    // Call the function to fetch data and display contests
+    luffy();
 });
 
 function custom_CF_contest() {
@@ -180,20 +197,26 @@ var leet = [
 
 var total = [];
 function luffy() {
+    document.getElementsByClassName('loader')[0].style.display = 'flex';
+
     setTimeout(() => {
-        console.log('showing GeeksForGeeks contests only');
-        var parent = document.getElementsByClassName('garp_contests')[0];
-        parent.innerHTML = "";
-        total = [...CFoneMonth, ...leet, ...chef, ...gfg];
-        // Custom time sort function
-        function time_sort(a, b) {
-            return new Date(a.date || a.startTimeSeconds) - new Date(b.date || b.startTimeSeconds);
-        }
-        // Sort contests by date
-        total.sort(time_sort);
-        console.log(total);
-        total.map((i, index) => {
-            default_code(i, index);
+        fun().then(() => {
+            console.log('showing contests');
+            document.getElementsByClassName('loader')[0].style.display = 'none'; // Hide the loader animation
+
+            var parent = document.getElementsByClassName('garp_contests')[0];
+            parent.innerHTML = "";
+            total = [...CFoneMonth, ...leet, ...chef, ...gfg];
+
+            function time_sort(a, b) {
+                return new Date(a.date || a.startTimeSeconds) - new Date(b.date || b.startTimeSeconds);
+            }
+
+            total.sort(time_sort);
+            console.log(total);
+            total.map((i, index) => {
+                default_code(i, index);
+            });
         });
     }, 3000);
 }
@@ -323,15 +346,9 @@ function default_code(ele, ind) {
     else if(ele.name.includes('Rated Contest')){
         linking.setAttribute('href' , ele.url);
     }
-    
-
     var turn_back = document.createElement('div');
     turn_back.setAttribute('class', 'turn_back');
-    turn_back.style.position = 'absolute';
-    turn_back.style.bottom = '10';
-    turn_back.style.left = '10';
-    turn_back.style.cursor = 'pointer';
-    turn_back.style.fontSize = '30px';
+    
     var turn_back_icn = document.createElement('i');
     turn_back_icn.setAttribute('class', 'fa-solid fa-circle-left');
     turn_back.appendChild(turn_back_icn);

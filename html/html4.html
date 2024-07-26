@@ -1,49 +1,117 @@
 <html>
-    <head>
-        <!-- CSS -->
-        <link rel="stylesheet" href="../css/css4.css"/>
-        <!-- font awesome -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-        <!-- fonts -->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <!-- Roboto --><link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
-        <!-- Noto Sans --><link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-        <!-- Open Sans --><link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
-        <!-- Mukta --><link href="https://fonts.googleapis.com/css2?family=Mukta:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
-        <!-- Montserrat --><link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-        <!-- Poppins --><link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-        <!-- Lato --><link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
-        <!-- Raleway --><link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-        <!-- Roboto Mono --><link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
-        <!-- Playfair Display --> <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
 
-    </head>
-    <body>
-        <div class="garp_one">
-            <div class="garp_left">
-                <div class="garp_item_docker">
-                    <div class="docker_items">
-                        <img src="../assets/leetcode.png" alt="LeetCode" class="docker_in_items" id="LC"></div>
-                    <div class="docker_items">
-                        <img src="../assets/gfg-new-logo.png" alt="GeeksForGeeks" class="docker_in_items" id="GFG"></div>
-                    <div class="docker_items">
-                        <img src="../assets/codechef.png" alt="CodeChef" class="docker_in_items" id="CC"></div>
-                    <div class="docker_items">
-                        <img src="../assets/cf.png" alt="Codeforces" class="docker_in_items" id="CF" ></div>
-                    <div class="docker_items" id="shinchan">
-                        <span>ALL</span>
-                    </div>
-                </div>
+<head>
+    <!-- <meta charset="UTF-8"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/css4.css" />
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Roboto -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <!-- Noto Sans -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <!-- Open Sans -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+        rel="stylesheet">
+    <!-- Mukta -->
+    <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@200;300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <!-- Montserrat -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <!-- Poppins -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <!-- Lato -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <!-- Raleway -->
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <!-- Roboto Mono -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+        rel="stylesheet">
+    <!-- Playfair Display -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body>
+
+
+    <div class="header">
+        <div class="logo-container">
+            <div class="logo"><i class="fa-solid fa-stopwatch"></i></div>
+            <div class="logo-text">Contest Remainder</div>
+        </div>
+        <div class="sect">
+            <div class="home">Home</div>
+            <div class="dashboard">Dashboard</div>
+            <div class="upcoming">Upcoming</div>
+            <div class="Todo">To-do List</div>
+        </div>
+        <div class="bars">
+            <i class="fa-solid fa-bars"></i>
+            <div class="parent">
+                <div class="p1">Profile</div>
+                <hr>
+                <div class="p2">Home</div>
+                <hr>
+                <div class="p3">Dashboard</div>
+                <hr>
+                <div class="p4">Upcoming</div>
+                <hr>
+                <div class="p5">To-do List</div>
+                <hr>
             </div>
-            <div class="garp_right">
-                <div class="garp_contests">
+        </div>
+        <div class="profile"><i class="fa-solid fa-user"></i></div>
+    </div>
 
+
+    <div class="garp_one">
+
+        <div class="garp_left">
+            <div class="garp_item_docker">
+                <div class="docker_items">
+                    <img src="../assets/leetcode.png" alt="LeetCode" class="docker_in_items" id="LC">
+                </div>
+                <div class="docker_items">
+                    <img src="../assets/gfg-new-logo.png" alt="GeeksForGeeks" class="docker_in_items" id="GFG">
+                </div>
+                <div class="docker_items">
+                    <img src="../assets/codechef.png" alt="CodeChef" class="docker_in_items" id="CC">
+                </div>
+                <div class="docker_items">
+                    <img src="../assets/cf.png" alt="Codeforces" class="docker_in_items" id="CF">
+                </div>
+                <div class="docker_items" id="shinchan">
+                    <span>ALL</span>
                 </div>
             </div>
         </div>
-        <!--? Script -->
-        <script type="module" src="../js/js4.js"></script>
+        <div class="garp_right">
 
-    </body>
+            <div class="loader"></div>
+            <div class="garp_contests">
+            </div>
+        </div>
+    </div>
+    <!--? Script -->
+    <script src="../js/js4.js"></script>
+
+</body>
+
 </html>
