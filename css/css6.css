@@ -31,7 +31,11 @@ header {
 	 /* background-image: url('../assets/jit/2151336704.jpg');  */
 	display: flex;
 	align-items: end;
-	background-color: aqua;
+	/* background-color: aqua; */
+	background: linear-gradient(0deg, red, orange, yellow, green, blue, purple);
+    transition: background 1s linear;
+	/* opacity: 0.9; */
+	/* z-index: -2\; */
 }
 /* .about img{
 	width: 100%;
