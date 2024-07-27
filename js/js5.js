@@ -15,7 +15,7 @@ setInterval(() => {
   change();
 }, 4000);
 
-var root = document.getElementsByClassName("cardcenter")[0];
+var root = document.getElementsByClassName("cardcenter1")[0];
 var c = 0;
 var wrong;
 var btn1 = document.getElementsByClassName("username1")[0];
@@ -100,9 +100,9 @@ function loadTasks() {
 }
 
 function addTaskToDOM(task) {
-  const card = document.createElement('div');
-  card.className = 'card';
-  card.setAttribute('data-id', task.id);
+  const card_txt = document.createElement('div');
+  card_txt.className = 'card_txt';
+  card_txt.setAttribute('data-id', task.id);
 
   const Element = document.createElement('div');
   Element.className = "first";
@@ -122,7 +122,7 @@ function addTaskToDOM(task) {
   time.innerHTML = task.time;
   Element.appendChild(time);
 
-  card.appendChild(Element);
+  card_txt.appendChild(Element);
 
   var check = document.createElement("input");
   check.className = "check";
@@ -143,7 +143,7 @@ function addTaskToDOM(task) {
       yes.innerHTML = "Yes";
       no.innerHTML = "No";
       yes.addEventListener("click", function() {
-        card.remove();
+        card_txt.remove();
         box.remove();
         deleteTask(task.id);
       });
@@ -161,11 +161,11 @@ function addTaskToDOM(task) {
     }
   });
 
-  card.appendChild(check);
-  // console.log(card);
-  root.appendChild(card);
+  card_txt.appendChild(check);
+  // console.log(card_txt);
+  root.appendChild(card_txt);
   
-  var arr =document.querySelectorAll(".card");
+  var arr =document.querySelectorAll(".card_txt");
   arr.forEach((ele)=>
   {
     ele.setAttribute("data-aos","slide-right")
