@@ -280,7 +280,7 @@ function default_code(ele, ind) {
 
     var rotate = document.createElement('div');
     rotate.setAttribute('class', 'rotate_div');
-    rotate.innerHTML = 'More';
+    rotate.innerHTML = 'Visit';
 
     child.appendChild(icn);
     child.append(rotate);
