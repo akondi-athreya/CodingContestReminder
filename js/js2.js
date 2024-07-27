@@ -22,6 +22,7 @@ function loginButton(formname) {
             // alert('Login successful');
             location.href="./html1.html";
             passwdLoginDivErase.reset();
+            window.location.href ="../html/html1.html";
         } else {
             alert("login failed");
             var form = document.getElementsByClassName(formname)[0];
