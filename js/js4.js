@@ -186,11 +186,11 @@ var chef = [
 var leet = [
     {
         name: "Biweekly Contest 136",
-        date: "2024-07-27 20:00",
+        date: "2024-08-03 20:00",
         url: "https://leetcode.com/contest/",
     }, {
         name: "Weekly Contest 408",
-        date: "2024-08-03 08:00",
+        date: "2024-07-28 08:00",
         url: "https://leetcode.com/contest/",
     },
 ];

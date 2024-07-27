@@ -15,7 +15,7 @@ setInterval(() => {
   change();
 }, 4000);
 
-var root = document.getElementsByClassName("cardcenter")[0];
+var root = document.getElementsByClassName("cardcenter1")[0];
 var c = 0;
 var wrong;
 var btn1 = document.getElementsByClassName("username1")[0];
