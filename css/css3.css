@@ -50,7 +50,7 @@
         font-weight: bold;
     }
     
-    .sect > div {
+    .sect > a {
         margin: 0 15px;
         cursor: pointer;
         position: relative;
@@ -58,7 +58,7 @@
         padding: 5px 10px;
     }
     
-    .sect > div::before {
+    .sect > a::before {
         content: '';
         position: absolute;
         width: 100%;
@@ -71,11 +71,11 @@
         transition: transform 0.3s ease-in-out;
     }
     
-    .sect > div:hover::before {
+    .sect > a:hover::before {
         transform: scaleX(1);
     }
     
-    .sect > div:hover {
+    .sect > a:hover {
         color: #0066cc;
         transform: scale(1.1);
     }
