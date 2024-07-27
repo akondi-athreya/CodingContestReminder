@@ -17,10 +17,13 @@
                             <div class="loginInputFiledsOptions">
                                 
                                 <div class="loginUserNameField">
-                                    
+                                    <div class="passwordLogin1">
+                                        <i class="fa-solid fa-user" id="inputFieldLogin"></i>
+                                        <p>UserName</p>
+                                    </div>
                                     <div class="innerLoginUserNameFiled">
-                                    <i class="fa-solid fa-user" id="inputFieldLogin"></i>
-                                        <input type="text" onchange="userNameLogin(this.value)" class="loginTextFiledOne" placeholder="&nbsp;UserName ">
+                                    <!-- <i class="fa-solid fa-user" id="inputFieldLogin"></i> -->
+                                        <input type="text" onchange="userNameLogin(this.value)" class="loginTextFiledOne" placeholder="">
                                     </div>
                                 </div>
                                 <div class="loginUserNameField">
@@ -28,7 +31,10 @@
                                         <i class="fa-solid fa-lock"></i>
                                         <p>Password</p>
                                     </div>
+                                    <div class="innerLoginUserNameFiled">
+                                    <!-- <i class="fa-solid fa-lock"></i>&nbsp; -->
                                     <input type="text" placeholder="" class="loginTextFiledTwo" onchange="passwdLogin(this.value)">
+                                </div>
                                 </div>
                             </div>
                             <div class="loginInputFiledsButtons">

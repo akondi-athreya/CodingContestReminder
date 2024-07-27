@@ -3,6 +3,11 @@
 {
 	margin: 0px;
 	padding: 0px;
+	font-family: "Karla", sans-serif;
+}
+
+a{
+	text-decoration: none;
 }
 
 /* header page */
@@ -261,7 +266,7 @@ font-size: 20px;
 	font-weight: 800;
 	letter-spacing: 1px;
 }
-.card {
+.card_txt {
     background-color: white;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -304,7 +309,7 @@ font-size: 20px;
 	display: flex;
 	align-items: center;
 }
-.cardcenter
+.cardcenter1
 {
 	width: 100%;
 	gap: 10px;
@@ -381,7 +386,7 @@ button{
 	cursor: pointer;
 }
 @media screen and (min-height:500px) {
-	.cardcenter
+	.cardcenter1
 	{
 		overflow-y:scroll;
 		overflow-x: hidden;

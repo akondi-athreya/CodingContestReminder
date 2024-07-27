@@ -498,7 +498,17 @@
     display: flex;
     flex-direction: column;
     align-items: start;
-    justify-content: end;
+    justify-content: start;
+    
+}
+.cpu-0{
+    width: 95%;
+    height: 30svh;
+    display: flex;
+    font-size: 10px;
+    font-family: Roboto Mono;
+    /* justify-content: center; */
+    
     
 }
 .cpu-1,.cpu-2,.cpu-3,.cpu-4{
