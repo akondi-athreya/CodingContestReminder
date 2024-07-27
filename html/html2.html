@@ -1,0 +1,58 @@
+<html>
+    <head>
+        <title>Login | Contest Remainder</title>
+        <link rel="stylesheet" href="../css/css2.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    </head>
+    <body>
+        <div class="firstLogin">
+        <div class="loginParent">
+            <div class="loginPageImage1"></div>
+            <div class="innerLoginParent"></div>
+                <div class="innerLoginParentTwo">
+                    <div class="innerLoginParentThree">
+                        <div class="loginNameDiv"><b class="loginName">Login</b></div>
+                        <div class="loginInputFileds">
+                            <form class="formLoginPage">
+                            <div class="loginInputFiledsOptions">
+                                
+                                <div class="loginUserNameField">
+                                    
+                                    <div class="innerLoginUserNameFiled">
+                                    <i class="fa-solid fa-user" id="inputFieldLogin"></i>
+                                        <input type="text" onchange="userNameLogin(this.value)" class="loginTextFiledOne" placeholder="&nbsp;UserName ">
+                                    </div>
+                                </div>
+                                <div class="loginUserNameField">
+                                    <div class="passwordLogin">
+                                        <i class="fa-solid fa-lock"></i>
+                                        <p>Password</p>
+                                    </div>
+                                    <input type="text" placeholder="" class="loginTextFiledTwo" onchange="passwdLogin(this.value)">
+                                </div>
+                            </div>
+                            <div class="loginInputFiledsButtons">
+                                <div class="forgetPasswdFiled">
+                                   &nbsp; <a href="" class="forgetAnchor">Forget Password?</a>
+                                </div>
+                                <div class="SigninButtonFiled">
+                                    <button class="loginButton" onclick="loginButton('formLoginPage')"><b>Login</b></button>
+                                </div>
+                                <div class="questionFiled">
+                                    Don`t You Have Account? 
+                                    <a href="../SignUpPages.html" class="SignUpAchor"> &nbsp;Sign Up</a>
+                                </div>
+                                <div></div>
+                            </div></form>
+                        </div>
+                    </div>
+                    <span class="top"></span>
+                    <span class="right"></span>
+                    <span class="bottom"></span>
+                    <span class="left"></span>
+                </div>
+        </div>
+    </div>
+    <script src="../js/js2.js"></script>
+    </body>
+</html>

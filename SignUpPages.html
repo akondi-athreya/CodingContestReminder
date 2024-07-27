@@ -1,0 +1,78 @@
+<html>
+    <head>
+        <title>SignUp |Contest Remainder</title>
+        <link rel="stylesheet" href="./SignUpPages.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Arsenal+SC:ital,wght@0,400;0,700;1,400;1,700&family=Karla:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    </head>
+    <body onmouseover="signTransition()">
+        <div class="signupParent" >
+            <div class="signCodingProfiles">
+                <div class="innerSignCodingProfiles">
+                    <div class="innersignUpDetailsDiv1"><b>Coding Profiles</b></div>
+                    <div class="innerSignCodingProfilesContent1">Provide your coding websites Username.</div>
+                    <div class="innerSignCodingProfilesUserFields">
+                        <div class="innerSignCodingProfilesUserFields1">
+                            <i class="fa-solid fa-chart-simple"></i>
+                            <input type="text" class="emailSignUpINputFiled" placeholder="UserName" id="signUpHiddenDetails1" onchange="hackerRankFromUser(this.value)">
+                        </div>
+                        <div class="innerSignCodingProfilesUserFields1">
+                            <image src="./assets/GfGSignUpPage.png" height="20px" width="30px"></image>
+                            <input type="text" class="emailSignUpINputFiled" placeholder="UserName" id="signUpHiddenDetails2" onchange="gfgUserNameFromUser(this.value)">
+                        </div>
+                        <div class="innerSignCodingProfilesUserFields1">
+                            <image src="./assets/LeetcodeSignUpPage.png" height="25px" width="40px"></image>
+                            <input type="text" class="emailSignUpINputFiled" placeholder="UserName" id="signUpHiddenDetails3" onchange="leetcodeUserNameFromUser(this.value)">
+                        </div>
+                        <div class="innerSignCodingProfilesUserFields1">
+                            <image src="./assets/CodechefSignUpPage.png" height="25px" width="40px"></image>
+                            <input type="text" class="emailSignUpINputFiled" placeholder="UserName" id="signUpHiddenDetails4" onchange="codechefUserNameFromUser(this.value)">
+                        </div>
+                        <div  id="innerSignCodingProfilesUserFields2"><button class="signUpPageSubmitButton" onclick="submitDataSignUpPage(event)">Submit</button></div>
+                    </div>
+                </div>
+            </div>
+            <div class="signupMainDiv" >
+            <div class="signUpDetails">
+                <div class="innersignUpDetails">
+                    <div class="innersignUpDetailsDiv1"><b>Sign Up</b></div>
+                    <div class="innersignUpDetailsDiv2">
+                        <div class="signUpPageButton0">
+                            <input type="text" placeholder="UserName" class="emailSignUpINputFiled" onchange="UserNameFromUser(this.value)">
+                        </div>
+                        <div class="signUpPageButton1">
+                            <input type="text" placeholder="Email" class="emailSignUpINputFiled" onchange="emailFromUser(this.value)">
+                        </div>
+                        <div class="signUpPageButton2">
+                            <input type="password" placeholder="Create Password" class="emailSignUpINputFiled" onchange="createPasswdFromUser(this.value)">
+                        </div>
+                        <div class="signUpPageButton3">
+                            <input type="password" placeholder="Comfirm Password" class="emailSignUpINputFiled" onchange="comfirmPasswdFromUser(this.value)">
+                        </div>
+                        <div class="signUpPageButton4">
+                            <button class="SignUpButtonFinal" onclick="gettingUserNames()">Sign Up</button>
+                        </div>
+                    </div>
+                    <div class="innersignUpDetailsDiv3">Already You have an Accout? 
+                        <a href="./html/html2.html"> &nbsp;Login</a>
+                    </div>
+                </div>
+            </div>
+            <div class="signUpContent">
+                <div class="signUpContentMainDiv">
+                <div class="signUpContent1">Hello,Techies!</div>
+                <div class="signUpContent2">Create Account here and you will never miss 
+                    <div class="somecontent"> the contest with all of our features.</div></div>
+                <div class="signUpContent3">
+                  <a href="./html/html2.html"><button class="loginbuttoninSihnUp" >Sign In</button></a>
+                </div>
+            </div>
+            </div>
+        </div>
+        </div>
+        <script src="./SignUpPage.js"></script>
+        <script src="./localstorage.js"></script>
+    </body>
+</html>

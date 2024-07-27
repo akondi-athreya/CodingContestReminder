@@ -1,0 +1,426 @@
+.signupParent{
+    width: 100%;
+    height: 100%;
+    /* background: linear-gradient(to bottom left ,#C1236C,#8a043e,#4D1092); */
+    /* background: linear-gradient(to top right,#031319,#010F14,#0F3947,#05303E); */
+    /* background: linear-gradient(to right,rgba(8, 83, 156, 0.75),#57B6F6,
+    rgba(8, 83, 156, 0.75)); */
+    background-color: #EAF0F2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Karla", sans-serif;
+    /* transition: all 2s; */
+}
+.signupMainDiv{
+    width: 80%;
+    height: 600px;
+    background-color: whitesmoke;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border-radius: 50px;
+    /* transition: all 10s; */
+    box-shadow: 0px 0px 3px 3px rgb(219, 210, 210);
+}
+.signUpDetails{
+    width: 54%;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* transition: all 10s; */
+    overflow: hidden;
+}
+.innersignUpDetails{
+    width: 600px;
+    height: 500px;
+    /* background-color: wheat; */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+}
+.signUpContent{
+    width: 0px;
+    height: 600px;
+    background-color: blueviolet;
+    border-top-left-radius: 30%;
+    border-bottom-left-radius: 30%;
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+    background-image:
+    linear-gradient(45deg,#57B6F6,rgba(8, 83, 156, 0.75)), 
+          url(../iship/assets/SignUpPagePic.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    opacity: 0.8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    transition: all 1s;
+    animation-name: signUpPageAnimation;
+    animation-timing-function: ease-in;
+    animation-iteration-count: infinite;
+}
+.innersignUpDetailsDiv1{
+    width: 500px;
+    height: 70px;
+    /* background-color: blue; */
+    font-size: 35px;
+    font: bolder;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: verdana;
+}
+.innersignUpDetailsDiv2{
+    width: 500px;
+    height: 500px;
+    /* background-color: rgb(41, 185, 51); */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-family: verdana;
+    flex-direction: column;
+}
+.innersignUpDetailsDiv3{
+    width: 500px;
+    height: 50px;
+    /* background-color: blue; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 17px;
+    color: rgb(71, 63, 63);
+}
+.signUpPageButton0{
+    width: 100%;
+    height: 50px;
+    border: 3px solid rgb(71, 63, 63);
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.signUpPageButton1{
+    width: 100%;
+    height: 50px;
+    border: 3px solid rgb(71, 63, 63);
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.emailSignUpINputFiled{
+    width: 97%;
+    height: 100%;
+    border: none;
+    background-color: whitesmoke;
+    border-radius: 15px;
+    font-size: 20px;
+}
+input:focus {
+    outline: none;
+    background-color: whitesmoke;
+  }
+.signUpPageButton2{
+    width: 100%;
+    height: 50px;
+    border: 3px solid rgb(71, 63, 63);
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.signUpPageButton3{
+    width: 100%;
+    height: 50px;
+    border: 3px solid rgb(71, 63, 63);
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.signUpPageButton4{
+    width: 250px;
+    height: 50px;
+    /* border: 1px solid black; */
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(71, 63, 63);
+
+}
+.signUpPageButton0:hover{
+    box-shadow: 0px 0px 2px 2px #91a3b5;
+}
+.signUpPageButton1:hover{
+    box-shadow: 0px 0px 2px 2px #91a3b5;
+}
+.signUpPageButton2:hover{
+    box-shadow: 0px 0px 2px 2px #91a3b5;
+}
+.signUpPageButton3:hover{
+    box-shadow: 0px 0px 2px 2px #91a3b5;
+}
+.signUpPageButton4:hover{
+    box-shadow: 0px 0px 2px 2px #91a3b5;
+}
+.SignUpButtonFinal{
+    width: 100%;
+    height: 100%;
+    font-size: 20px;
+    border-radius: 20px;
+    background: linear-gradient(to right,rgba(8, 83, 156, 0.75),#57B6F6,
+    rgba(8, 83, 156, 0.75));
+    /* border-top-right-radius: 5px; */
+}
+.SignUpButtonFinal:active {
+    box-shadow: 0px 0px 5px 2px #007CF7;
+    transform: translate(-4px,-4px);
+}
+.signUpContentMainDiv{
+    width: 440px;
+    height: 200px;
+    /*  background-color: #ffe4c4; */
+    justify-content: space-around;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    color: white;
+}
+.signUpContent1{
+    width: 400px;
+    height: 70px;
+    /* background-color: #3e8e41; */
+    font-size: 35px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+.signUpContent2{
+    width: 450px;
+    height: 70px;
+    /* background-color: black; */
+    font-size: 20px;
+    justify-content: center;
+    text-align: justify;
+    font-family: Verdana;
+}
+.signUpContent3{
+    width: 200px;
+    height: 50px;
+    /* background-color: aqua; */
+}
+.somecontent{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.loginbuttoninSihnUp{
+    width: 200px;
+    height: 50px;
+    border: 4px solid black;
+    background: linear-gradient(to right,whitesmoke,white);
+    border-radius: 20px;
+    font-size: 18px;
+    box-shadow: 0px 0px 5px 2px grey;
+}
+.loginbuttoninSihnUp:active {
+    box-shadow: 0px 0px 5px 5px #007CF7;
+    transform: translate(4px);
+}
+.loginbuttoninSihnUp:hover{
+        box-shadow: 0px 0px 2px 2px lightblue;
+}
+@keyframes signUpPageAnimation{
+    0%{
+        border-top-left-radius: 30%;
+        border-bottom-left-radius: 30%;
+        border-top-right-radius: 50px;
+        border-bottom-right-radius: 50px;
+    }
+    50%{
+        border-top-left-radius: 50px;
+        border-bottom-left-radius: 50px;
+        border-top-right-radius: 50px;
+        border-bottom-right-radius: 50px;
+    }
+    100%{
+        border-top-left-radius: 30%;
+        border-bottom-left-radius: 30%;
+        border-top-right-radius: 50px;
+        border-bottom-right-radius: 50px;
+    }
+}
+.signCodingProfiles{
+    width: 0%;
+    height: fit-content;
+    position: absolute;
+    /* border: 1px solid black; */
+    left: 200px;
+    border-radius: 50px;
+    background-color: whitesmoke;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    /* display: none; */
+    transition: all 1s;
+}
+.innerSignCodingProfiles{
+    width: 90%;
+    height: 500px;
+    /* background-color: wheat; */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+}
+.innerSignCodingProfilesContent1{
+    width: 80%;
+    height: 10%;
+    /* background-color: bisque; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+}
+.innerSignCodingProfilesUserFields{
+    width: 90%;
+    height: 70%;
+    /* background-color: aliceblue; */
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+
+}
+.innerSignCodingProfilesUserFields1{
+    width: 100%;
+    height: 15%;
+    /* background-color: antiquewhite; */
+    border:3px solid rgb(71, 63, 63);
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    font-size: 30px;
+    justify-content: space-around;
+    color: rgb(71, 63, 63);
+}
+#signUpHiddenDetails1{
+    width: 88%;
+}
+#signUpHiddenDetails2{
+    width: 88%;
+}
+#signUpHiddenDetails3{
+    width: 88%;
+}
+#signUpHiddenDetails4{
+    width: 88%;
+}
+#innerSignCodingProfilesUserFields2{
+    width: 60%;
+    height: 14%;
+    display: center;
+    font-size: 20px;
+    border-radius: 20px;
+    background: linear-gradient(to right,rgba(8, 83, 156, 0.75),rgba(245, 70, 66, 0.75),
+    rgba(8, 83, 156, 0.75));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid black;
+}
+#innerSignCodingProfilesUserFields2:hover{
+    box-shadow: 0px 0px 3px 3px #91a3b5;
+}
+.signUpPageSubmitButton{
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right,rgba(8, 83, 156, 0.75),lightblue,
+    rgba(8, 83, 156, 0.75));
+    border: none;
+    border-radius: 20px;
+    font-size: 20px;
+}
+.innerSignCodingProfilesUserFields1:hover{
+    box-shadow: 0px 0px 3px 3px #91a3b5;
+}
+#innerSignCodingProfilesUserFields2:active {
+    box-shadow: 0px 0px 5px 2px #007CF7;
+    transform: translateY(4px);
+}
+@media screen  and (max-width:1324px){
+    .signUpContent{
+        display: none;
+    }
+}
+@media screen  and (max-width:2700px){
+    .signCodingProfiles{
+        height: fit-content;
+    }
+}
+@media screen  and (max-width:1210px){
+    .signUpDetails{
+        width: 70%;
+    }
+    .signUpPageButton0{
+        width: 65%;
+    }
+    .signUpPageButton2{
+        width: 65%;
+    } 
+    .signUpPageButton1{
+        width: 65%;
+    } 
+    .signUpPageButton3{
+        width: 65%;
+    } 
+}
+@media screen  and (max-width:700px){
+    .signUpPageButton0{
+        width: 40%;
+    }
+    .signUpPageButton2{
+        width: 40%;
+    } 
+    .signUpPageButton1{
+        width: 40%;
+    } 
+    .signUpPageButton3{
+        width: 40%;
+    }  
+}
+@media screen  and (max-width:300px){
+    .signUpPageButton0{
+        width: 20%;
+    }
+    .signUpPageButton2{
+        width: 20%;
+    } 
+    .signUpPageButton1{
+        width: 20%;
+    } 
+    .signUpPageButton3{
+        width: 20%;
+    } 
+}
+@media screen  and (max-width:200px){
+    .signUpPageButton0{
+        width: 5%;
+    }
+    .signUpPageButton2{
+        width: 18%;
+    } 
+    .signUpPageButton1{
+        width: 18%;
+    } 
+    .signUpPageButton3{
+        width: 18%;
+    } 
+}
