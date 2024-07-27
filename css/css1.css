@@ -5,6 +5,14 @@ body {
     background-color: #EAF0F2;
 }
 
+a{
+  text-decoration: none;
+  color: black;
+}
+/* a:hover{
+  color: #56b6f6;
+} */
+
 #particles-js {
   position: absolute;
   width: 100%;
