@@ -3,31 +3,31 @@
 var codeforces_data = {};
 let CFoneMonth = [];
 
-// async function fun() {
-//     try {
-//         const response = await fetch('https://codeforces.com/api/contest.list');
-//         const data = await response.json();
-//         codeforces_data = {};
-//         codeforces_data = data;
-//         CFoneMonth = [];
-//         let j = 0;
-//         while (codeforces_data.result[j] && codeforces_data.result[j].phase === "BEFORE") {
-//             let contest = codeforces_data.result[j];
-//             contest.startTimeSeconds = unixToDateTime(contest.startTimeSeconds);
-//             contest.durationSeconds = StoM(contest.durationSeconds);
-//             CFoneMonth.push(contest);
-//             j++;
-//             console.log(contest);
-//         }
-//         CFoneMonth.reverse();
-//         console.log("CF");
-//         console.log(CFoneMonth);
+async function fun() {
+    try {
+        const response = await fetch('https://codeforces.com/api/contest.list');
+        const data = await response.json();
+        codeforces_data = {};
+        codeforces_data = data;
+        CFoneMonth = [];
+        let j = 0;
+        while (codeforces_data.result[j] && codeforces_data.result[j].phase === "BEFORE") {
+            let contest = codeforces_data.result[j];
+            contest.startTimeSeconds = unixToDateTime(contest.startTimeSeconds);
+            contest.durationSeconds = StoM(contest.durationSeconds);
+            CFoneMonth.push(contest);
+            j++;
+            // console.log(contest);
+        }
+        CFoneMonth.reverse();
+        // console.log("CF");
+        // console.log(CFoneMonth);
         
         
-//     } catch (error) {
-//         console.log(error);
-//     }
-// }
+    } catch (error) {
+        console.log(error);
+    }
+}
 
 // fun();
 document.addEventListener('DOMContentLoaded', () => {
@@ -200,7 +200,7 @@ function luffy() {
     document.getElementsByClassName('loader')[0].style.display = 'flex';
 
     setTimeout(() => {
-        // fun().then(() => {
+        fun().then(() => {
             console.log('showing contests');
             document.getElementsByClassName('loader')[0].style.display = 'none'; // Hide the loader animation
 
@@ -217,7 +217,7 @@ function luffy() {
             total.map((i, index) => {
                 default_code(i, index);
             });
-        // });
+        });
     }, 3000);
 }
 luffy();

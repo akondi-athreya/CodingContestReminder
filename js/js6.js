@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const card = team.querySelector('.card');
 
         team.addEventListener('mouseenter', () => {
+           
             gsap.to(card, {
                 top: '-300%',
                 left: '-80%',
@@ -31,3 +32,37 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
+
+
+const gradientBox = document.getElementsByClassName("about")[0];
+
+let color1 = '#FF0000'; // Red
+let color2 = '#FFA500'; // Orange
+let color3 = '#FFFF00'; // Yellow
+let color4 = '#008000'; // Green
+let color5 = '#0000FF'; // Blue
+let color6 = '#800080'; // Purple
+
+function getRandomColor() {
+    const letters = '0123456789ABCDEF';
+    let color = '#';
+    for (let i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+}
+
+function changeGradient() {
+    color1 = getRandomColor();
+    color2 = getRandomColor();
+    color3 = getRandomColor();
+    color4 = getRandomColor();
+    color5 = getRandomColor();
+    color6 = getRandomColor();
+    
+    const gradient = `linear-gradient(to top right, ${color1}, ${color2}, ${color3}, ${color4}, ${color5}, ${color6})`;
+    gradientBox.style.background = gradient;
+}
+
+setInterval(changeGradient, 2000);

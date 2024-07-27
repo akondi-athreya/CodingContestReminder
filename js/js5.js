@@ -229,10 +229,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // github  
 
-// var left1=document.getElementsByClassName("timeset")[0];
-// left1.setAttribute("data-aos","slide-right")
-// left1.setAttribute("data-aos-duration","1000")
+var left1=document.getElementsByClassName("timeset")[0];
+left1.setAttribute("data-aos","slide-up")
+left1.setAttribute("data-aos-duration","1000")
 
-// var right1=document.getElementsByClassName("notification")[0];
-// right1.setAttribute("data-aos","slide-left")
-// right1.setAttribute("data-aos-duration","1000")
+var right1=document.getElementsByClassName("notification")[0];
+right1.setAttribute("data-aos","slide-up")
+right1.setAttribute("data-aos-duration","1000")
