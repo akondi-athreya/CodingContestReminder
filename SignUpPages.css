@@ -424,3 +424,13 @@ input:focus {
         width: 18%;
     } 
 }
+@media screen and (max-width:380px){
+    .innerSignCodingProfiles{
+        width: 100%;
+    }
+}
+@media screen and (max-width:1024px){
+    .innerSignCodingProfiles{
+        width: 100%;
+    }
+}
