@@ -12,15 +12,15 @@ function loginButton(formname) {
         var Username = (userNameDiv);
         var Password = (passwdUserDiv);
         console.log("Entered Username:", Username);
-    console.log("Entered Password:", Password);
+        console.log("Entered Password:", Password);
         const usersString = localStorage.getItem('users');
         const usersArray = JSON.parse(usersString);
         const user = usersArray.find(user => user.username === Username && user.password === Password);
-    
+        window.location.href ="../html/html1.html";
         if (user) {
             console.log("hai")
             // alert('Login successful');
-            location.href="../SignUpPages.html";
+            location.href="./html1.html";
             passwdLoginDivErase.reset();
         } else {
             alert("login failed");
