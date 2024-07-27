@@ -1,0 +1,355 @@
+<html>
+    <head>
+        <title>Carousels | Html</title>
+         <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+        <style>
+            body{
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background-color: #EAF0F2;
+                display: flex;
+                align-items: center;
+                justify-content: space-around;
+                flex-direction: column;
+            }
+            .codingEditorLine{
+                font-size: 45px;
+                font: bolder;
+                width: 100%;
+                height: 20%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .parent{
+                width: 75%;
+                height: 75%;
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+                position: relative;
+                background-color: whitesmoke;
+                box-shadow: 2px 2px 20px 20px rgba(0, 0, 0, 0.062);
+                /* box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 50px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 26px -18px inset; */
+            }
+            .child1{
+                width: 80%;
+                height: 90%;
+                display: flex;
+                flex-direction: column;
+                /* border: 1px solid black; */
+                justify-content: center;
+                align-items: center;
+                background-color: whitesmoke;
+            }
+            button{
+                display: none;
+            }
+            .slick-dots{
+                display: flex;
+                position: absolute;
+                gap: 20px;
+                bottom: 0px;
+                left: 50%;
+            }
+            .slick-active{
+                color: lightblue;
+            }
+            
+            .innerImages{
+                height: 100%;
+                width: 100%;
+                display: flex;
+                border-radius: 10%;
+                border-radius: 90px;
+            }
+            .vscodeEditor{
+                width: 100%;
+                height: 100%;
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+                /* background-color:aqua; */
+            }
+            .innervsCodeEditor{
+                width: 30%;
+                height: 60%;
+                /* background-color: #E7809A; */
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+                background-repeat: no-repeat;
+                background-size: 100% 100%;
+                animation: editorPictures 2s;
+                transition: all 2s;
+                animation-iteration-count: infinite;
+            }
+            .innerVSCodeEditor2{
+                width: 55%;
+                height: 80%;
+                /* background-color: #E7809A; */
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+            }
+            .innerVsCodeEditorsInner1{
+                width: 90%;
+                height: 90%;
+                /* background-color: beige; */
+                display: flex;
+                align-items: center;
+                justify-content: space-around;
+                flex-direction: column;
+            }
+            .innerVsCodeContent1{
+                width: 100%;
+                height: 15%;
+                /* background-color: #E7809A; */
+                color: black;
+                font-size: 40px;
+                display: flex;
+                align-items: flex-end;
+            }
+            .innerVsCodeContent2{
+                width: 100%;
+                height: 35%;
+                /* background-color: antiquewhite; */
+                color: black;
+                font-size: 25px;
+                text-align: center;
+            }
+            .innerVsCodeContent3{
+                width: 100%;
+                height: 20%;
+                /* background-color: aquamarine; */
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                color: black;
+            }
+            .editorDownload{
+                width: 50%;
+                height: 80%;
+                --fancy-button-gradient-0: #8d49fd;
+                --fancy-button-gradient-50: #7f56f3;
+                --fancy-button-gradient-100: #5691f3;
+                --fancy-button-inner-shadow-top: rgba(233, 209, 255, 0.2);
+                --fancy-button-inner-shadow-top-lg: rgba(9, 12, 60, 0.1);
+                --fancy-button-inner-shadow-bottom: rgba(137, 222, 246, 0.3);
+                --fancy-button-shine-top: #e9d1ff;
+                --fancy-button-shine-bottom: #adfff9;
+                font-family: 'Poppins';
+                background-image: linear-gradient(to bottom, var(--fancy-button-gradient-0) 0%, var(--fancy-button-gradient-50) 50%, var(--fancy-button-gradient-100) 100%);
+                border: 3px solid black;
+                border-radius: 30px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 30px;
+                font: bolder;
+            }
+            .innerImages1{
+                height: 100%;
+                width: 90%;
+                display: flex;
+                border-radius: 10%;
+            }
+            .editorDownload:hover {
+            transform: translate(-0.05em, -0.05em);
+            box-shadow: 0.15em 0.15em;
+                }
+            .editorDownload:active {
+            transform: translate(0.05em, 0.05em);
+             box-shadow: 0.05em 0.05em;
+            }
+            #dowmloadButtonText{
+                color: black;
+            }
+            #innerImages2{
+                width: 80%;
+                height: 80%;
+                border-radius: 20px;
+                width: 80%;
+            }
+            @keyframes editorPictures{
+                0%{
+                    transform: scale(0.9);
+                }
+                50%{
+                    transform: scale(1);
+                }
+                100%{
+                    transform: scale(0.9);
+                }
+            }
+            @media screen and (max-width: 1230px){
+                .innerVsCodeContent2{
+                    font-size: 20px;
+                }
+                .innerVsCodeContent1{
+                    justify-content: center;
+                }
+
+            }
+            @media screen and (max-width: 800px){
+                .innerVsCodeContent2{
+                    font-size: 18px;
+                }
+                .innerImages{
+                    width: 100%;
+                    height: 60%;
+                }
+                .innerImages1{
+                    width: 100%;
+                    height: 60%;
+                }
+                .editorDownload{
+                    font-size: 18px;
+                    width: 80%;
+                    height: 60%;
+                }
+                }
+                @media screen and (max-width: 200px){
+                    .innerVsCodeContent2{
+                        width: 0px;
+                        height: 0px;
+                        overflow: hidden;
+                    }
+                    .editorDownload{
+                        width: 80%;
+                        height: 100%;
+                    font-size: 18px;
+                    }
+                    .innerVsCodeContent1{
+                        font-size: 32px;
+                    }
+                    .innerVsCodeEditorsInner1{
+                        height: 30%;
+                    }
+                    .innerVsCodeContent3{
+                        height: 40%;
+                        width: 80%;
+                    }
+                    .child1{
+                        width: 70%;
+                        height: 50%;
+                    } 
+        }
+        </style>
+    </head>
+    <body>
+        <div class="codingEditorLine">Coding Editors</div>
+        <div class="parent">
+            
+            <div class="child1">
+                <div class="vscodeEditor">
+                    <div class="innervsCodeEditor">
+                        <image src="./assets/vs2.jpeg" height="100%" width="100%" class="innerImages" ></image>
+                    </div>
+                    <div class="innerVSCodeEditor2">
+                        <div class="innerVsCodeEditorsInner1">
+                            <div class="innerVsCodeContent1">VS Code</div>
+                            <div class="innerVsCodeContent2">Visual Studio Code is a free, open-source code editort,
+                                 known for extensive extension library.
+                                 It supports multiple programming languages, integrated terminal, built-in Git support.</div>
+                            <div class="innerVsCodeContent3">
+                                <a href="https://code.visualstudio.com/download" class="editorDownload" id="dowmloadButtonText"><div >Download</div></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="child1">
+                    <div class="vscodeEditor">
+                        <div class="innervsCodeEditor">
+                            <img src="./assets/cpp3.png" height="100%" width="100%" class="innerImages1">
+                        </div>
+                        <div class="innerVSCodeEditor2">
+                            <div class="innerVsCodeEditorsInner1">
+                                <div class="innerVsCodeContent1">Dev Cpp</div>
+                                <div class="innerVsCodeContent2">Dev-C++ is a free, integrated development environment
+                                     (IDE) for C and C++ programming. It offers features like syntax highlighting, debugging,
+                                      and project management.</div>
+                                <div class="innerVsCodeContent3">
+                                    <a href="https://sourceforge.net/projects/orwelldevcpp/" class="editorDownload" id="dowmloadButtonText"><div >Download</div></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+        </div>
+        <div class="child1">
+            <div class="vscodeEditor">
+                <div class="innervsCodeEditor">
+                    <img src="./assets/sublimelogo.webp" height="100%" width="100%" class="innerImages">
+                </div>
+                <div class="innerVSCodeEditor2">
+                    <div class="innerVsCodeEditorsInner1">
+                        <div class="innerVsCodeContent1">Sublime</div>
+                        <div class="innerVsCodeContent2">Sublime Text is a high-performance text
+                             editor known for advanced features like multiple selections  powerful
+                              search. It supports many programming languages,extended plugins.
+                        </div>
+                        <div class="innerVsCodeContent3">
+                            <a href="https://www.sublimetext.com/download" class="editorDownload" id="dowmloadButtonText"><div >Download</div></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+</div>
+<div class="child1">
+    <div class="vscodeEditor">
+        <div class="innervsCodeEditor">
+            <img src="./assets/Jupiter.png" height="100%" width="100%" class="innerImages1">
+        </div>
+        <div class="innerVSCodeEditor2">
+            <div class="innerVsCodeEditorsInner1">
+                <div class="innerVsCodeContent1">Jupyter</div>
+                <div class="innerVsCodeContent2">Jupyter Notebook is an open-source web app for 
+                    creating and sharing documents with live code, equations, and visualizations.
+                     It's popular in data science and research for its interactive capabilities.</div>
+                <div class="innerVsCodeContent3">
+                    <a href="https://jupyter.org/install" class="editorDownload" id="dowmloadButtonText"><div >Download</div></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="child1">
+    <div class="vscodeEditor">
+        <div class="innervsCodeEditor">
+            <img src="./assets/Eclipse2.png" height="100%" width="100%" class="innerImages1">
+        </div>
+        <div class="innerVSCodeEditor2">
+            <div class="innerVsCodeEditorsInner1">
+                <div class="innerVsCodeContent1">Eclipse</div>
+                <div class="innerVsCodeContent2">A comprehensive IDE primarily for Java, but supports other languages through plugins,
+                     known for its powerful debugging and development tools.
+                </div>
+                <div class="innerVsCodeContent3">
+                    <a href="https://www.eclipse.org/downloads/" class="editorDownload" id="dowmloadButtonText"><div >Download</div></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+        </div>
+        <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+        <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+        <script>
+                $(document).ready(function(){
+                $('.parent').slick({
+                centerMode: true,
+                dots: true,
+                infinite: true,
+                speed: 300,
+                slidesToShow: 1,
+                 autoplay: true,
+                autoplaySpeed: 1500,
+                arrows: false,
+                });
+            });
+        </script>
+    </body>
+</html>

@@ -1,0 +1,406 @@
+.loginParent{
+    width: 70%;
+    height: 90%;
+    background: linear-gradient(45deg,#57B6F6,rgba(8, 83, 156, 0.75));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+    box-shadow: 0px 0px 3px 3px rgb(194, 183, 183);
+}
+.firstLogin{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.innerLoginParent{
+    width: 420px;
+    background-color: aliceblue;
+    height: 550px;
+    transform: rotate(10deg);
+    border: 1px solid black;
+    transition: all 2s;
+    /* animation-name: backgroundDivLogin; */
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    position: relative;
+}
+
+.innerLoginParentTwo{
+    width: 400px;
+    height: 550px;
+    background-color: aliceblue;
+    /* border: 1px solid black; */
+    /* border-radius: 20px; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    animation: none;
+    border-top: 1px solid rgba(255, 49, 49, 0.5);
+    border-right: 1px solid rgba(0, 255, 255, 0.5);
+    border-bottom:1px solid rgba(57, 255, 20, 0.5);
+    border-left: 1px solid rgba(255, 255, 113, 0.5);
+}
+.innerLoginParentThree{
+    width: 350px;
+    height: 430px;
+    /* background-color: blueviolet; */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+}
+.loginNameDiv{
+    width: 350px;
+    height: 100px;
+    /* background-color: burlywood; */
+    font-size: 40px;
+    font: bolder;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: verdana;
+}
+.loginInputFileds{
+    width: 350px;
+    height: 300px;
+    /* background-color: rgb(47, 146, 146); */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+}
+.loginInputFiledsOptions{
+    width: 350px;
+    height: 140px;
+    /* background-color: aquamarine; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+}
+.loginUserNameField{
+    width: 350px;
+    height: 50px;
+    border: 2px solid rgb(71, 63, 63);
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font: 20px;
+}
+.innerLoginUserNameFiled{
+    width: 330px;
+    height: 50px;
+    font-size: 25px;
+    display: flex;
+     justify-content: space-around; 
+    align-items: center;
+}
+.loginUserNameField:hover{
+    box-shadow: 0px 0px 3px 3px lightblue;
+}
+.loginTextFiledOne{
+    border: 1px solid aliceblue;
+    width: 310px;
+    height: 50px;
+    font-size: 20px;
+    background-color: aliceblue;
+    color: rgb(45, 36, 36);
+}
+.loginTextFiledTwo{
+    border: none;
+ width: 340px;
+ height: 50px;
+font-size: 20px;
+background-color: aliceblue;
+color: rgb(45, 36, 36);
+}
+#inputFieldLogin{
+    font-size: 20px;
+    color: rgb(71, 63, 63)
+}
+.loginInputFiledsButtons{
+    width: 350px;
+    height: 140px;
+    /* background-color: aquamarine; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    color: rgb(71, 63, 63)
+}
+.forgetPasswdFiled{
+    width: 350px;
+    height: 30px;
+    /* border: 2px solid black; */
+    border-radius: 5px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    color: rgb(45, 36, 36);
+}
+.SigninButtonFiled{
+    width: 350px;
+    height: 50px;
+    border: 1px solid black;
+    border-radius: 10px;
+    /* border-top-right-radius: 10px; */
+
+}
+
+.loginButton{
+    width: 100%;
+    height: 100%;
+    font-size: 20px;
+    border-radius: 10px;
+    /* background: linear-gradient(to right,#00BAF7,#007CF7,#00BAF7,#007CF7); */
+    background: linear-gradient(to right,rgba(8, 83, 156, 0.75),#57B6F6,
+    rgba(8, 83, 156, 0.75));
+}
+
+.loginButton:active {
+  background-color: #3e8e41;
+  box-shadow: 0px 0px 5px 2px #007CF7;
+  transform: translate(4px);
+}
+.questionFiled{
+    width: 350px;
+    height: 30px;
+    /* border: 2px solid black; */
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 17px;
+    color: rgb(71, 63, 63);
+}
+.passwordLogin{
+    width: 120px;
+    height:25px;
+    position: absolute;
+    background-color: aliceblue;
+    top: 260px;
+    right: +250px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    font-size: 20px;
+    color: rgb(66, 54, 54);
+}
+.SignUpAchor{
+    color: #007CF7;
+}
+.forgetAnchor{
+    color: rgb(66, 54, 54);
+}
+input:focus {
+    outline: none;
+  }
+@keyframes loginBackground {
+    0%{
+        background: linear-gradient(90deg ,rgb(76, 76, 149),rgb(76, 76, 149),lightblue,rgb(45, 123, 152)); 
+        /* background: rgb(76, 76, 149);  */
+        color: lightblue;
+    }
+    25%{
+        background: linear-gradient(90deg ,rgb(45, 123, 152),lightblue,rgb(76, 76, 149),rgb(76, 76, 149)); 
+        /* background: lightblue;  */
+        color: rgb(76, 76, 149);
+    }
+    50%{
+        background: linear-gradient(90deg,rgb(76, 76, 149),rgb(82, 82, 140),lightblue,rgb(45, 123, 152));
+        /* background: rgb(76, 76, 149);  */
+        color: lightblue;
+    }
+    75%{
+        background: linear-gradient(90deg ,lightblue,rgb(76, 76, 149));
+        /* background: lightblue;  */
+        color: rgb(76, 76, 149);
+    }
+    100%{
+        background: linear-gradient(90deg,lightblue,rgb(76, 76, 149));
+        /* background: rgb(76, 76, 149);  */
+        color: lightblue;
+    }
+}
+@keyframes backgroundDivLogin{
+    0%{
+        transform: rotate(10deg);
+        background: #3d91b8; 
+    color: #ffffff; 
+    }
+    50%{
+        transform: rotate(-20deg);
+    }
+    100%{
+        transform: rotate(10deg);
+    }
+}
+.loginName{
+    color: black;
+}
+@media screen  and (max-width:1024px){
+    .loginParent{
+        width: 100%;
+        height: 100%;
+    }
+}
+@media screen and (max-width: 250px){
+    body{
+        background: linear-gradient(to bottom left ,#C1236C,#8a043e,#4D1092); 
+    }
+}
+@media screen and (max-width: 280px){
+    .innerLoginParent{
+        width: 50%;
+        transform: rotate(0deg);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .innerLoginParentTwo{
+        width: 90%;
+        height: 70%;
+        background-color: whitesmoke;
+        transform: rotate(0deg);
+    }
+}
+span {
+    position: absolute;
+    border-radius: 100vmax;
+  }
+  
+  .top {
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 10px;
+    background: linear-gradient(
+      180deg,
+      #4D1092,
+      rgba(255, 255, 113, 0.5),#4D1092,
+      transparent 70%
+    );
+  }
+  
+  .bottom {
+    right: 0;
+    bottom: 0;
+    height: 10px;
+    background: linear-gradient(
+      180deg,
+      #4D1092,
+      rgba(255, 255, 113, 0.5),#4D1092,
+      transparent 70%
+    );
+  }
+  
+  .right {
+    top: 0;
+    right: 0;
+    width: 10px;
+    height: 0;
+    background: linear-gradient(
+      180deg,
+      #4D1092,
+      rgba(255, 255, 113, 0.5),#4D1092,
+      transparent 70%
+    );
+  }
+  
+  .left {
+    left: 0;
+    bottom: 0;
+    width: 10px;
+    height: 0;
+    background: linear-gradient(
+      180deg,
+      #4D1092,
+      rgba(255, 255, 113, 0.5),#4D1092,
+      transparent 70%
+    );
+  }
+  
+  .top {
+    animation: animateTop 3s ease-in-out infinite;
+  }
+  
+  .bottom {
+    animation: animateBottom 3s ease-in-out infinite;
+  }
+  
+  .right {
+    animation: animateRight 3s ease-in-out infinite;
+  }
+  
+  .left {
+    animation: animateLeft 3s ease-in-out infinite;
+  }
+  
+  @keyframes animateTop {
+    25% {
+      width: 100%;
+      opacity: 1;
+    }
+  
+    30%,
+    100% {
+      opacity: 0;
+    }
+  }
+  
+  @keyframes animateBottom {
+    0%,
+    50% {
+      opacity: 0;
+      width: 0;
+    }
+  
+    75% {
+      opacity: 1;
+      width: 100%;
+    }
+  
+    76%,
+    100% {
+      opacity: 0;
+    }
+  }
+  
+  @keyframes animateRight {
+    0%,
+    25% {
+      opacity: 0;
+      height: 0;
+    }
+  
+    50% {
+      opacity: 1;
+      height: 100%;
+    }
+  
+    55%,
+    100% {
+      height: 100%;
+      opacity: 0;
+    }
+  }
+  
+  @keyframes animateLeft {
+    0%,
+    75% {
+      opacity: 0;
+      bottom: 0;
+      height: 0;
+    }
+  
+    100% {
+      opacity: 1;
+      height: 100%;
+    }
+  } 
