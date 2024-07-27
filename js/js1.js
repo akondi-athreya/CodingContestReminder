@@ -20,3 +20,6 @@ function isElementInViewport(el) {
 
   window.addEventListener('scroll', animateLanguageBoxes);
   window.addEventListener('load', animateLanguageBoxes);
+
+
+ 
