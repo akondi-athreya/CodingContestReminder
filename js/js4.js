@@ -129,11 +129,6 @@ function StoM(seconds) {
 
 var gfg = [
     {
-        name: "GFG Weekly - 165 [Rated Contest]",
-        url: "https://www.geeksforgeeks.org/events?itm_source=geeksforgeeks&itm_medium=main_header&itm_campaign=contests",
-        date: "2024-07-28 19:00",
-    },
-    {
         name: "GFG Weekly - 166 [Rated Contest]",
         url: "https://www.geeksforgeeks.org/events?itm_source=geeksforgeeks&itm_medium=main_header&itm_campaign=contests",
         date: "2024-08-04 19:00",
@@ -142,6 +137,11 @@ var gfg = [
         name: "GFG Weekly - 167 [Rated Contest]",
         url: "https://www.geeksforgeeks.org/events?itm_source=geeksforgeeks&itm_medium=main_header&itm_campaign=contests",
         date: "2024-08-11 19:00",
+    },
+    {
+        name: "GFG Weekly - 168 [Rated Contest]",
+        url: "https://www.geeksforgeeks.org/events?itm_source=geeksforgeeks&itm_medium=main_header&itm_campaign=contests",
+        date: "2024-08-18 19:00",
     }
 ];
 
@@ -189,8 +189,8 @@ var leet = [
         date: "2024-08-03 20:00",
         url: "https://leetcode.com/contest/",
     }, {
-        name: "Weekly Contest 408",
-        date: "2024-07-28 08:00",
+        name: "Weekly Contest 409",
+        date: "2024-08-04 08:00",
         url: "https://leetcode.com/contest/",
     },
 ];
