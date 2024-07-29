@@ -151,35 +151,35 @@ var chef = [
         date: "2024-07-31 20:00",
         duration: "2 Hours",
         time_left: "Starts in 8 Days 5 Hours",
-        url: "https://www.codechef.com/"
+        url: "https://www.codechef.com/contests"
     },
     {
         name: "START146",
         date: "2024-08-07 20:00",
         duration: "2 Hours",
         time_left: "Starts in 8 Days 5 Hours",
-        url: "https://www.codechef.com/"
+        url: "https://www.codechef.com/contests"
     },
     {
         name: "START147",
         date: "2024-08-14 20:00",
         duration: "2 Hours",
         time_left: "Starts in 8 Days 5 Hours",
-        url: "https://www.codechef.com/"
+        url: "https://www.codechef.com/contests"
     },
     {
         name: "START148",
         date: "2024-08-21 20:00",
         duration: "2 Hours",
         time_left: "Starts in 8 Days 5 Hours",
-        url: "https://www.codechef.com/"
+        url: "https://www.codechef.com/contests"
     },
     {
         name: "START149",
         date: "2024-08-28 20:00",
         duration: "2 Hours",
         time_left: "Starts in 8 Days 5 Hours",
-        url: "https://www.codechef.com/"
+        url: "https://www.codechef.com/contests"
     }
 ];
 
