@@ -45,7 +45,7 @@ function fun() {
   var f = document.getElementsByTagName("input")[0].value;
   var g = document.getElementsByTagName("textarea")[0].value;
 
-  if (f) {
+  if (f&&g) {
     c = 1;
     if (wrong) {
       document.getElementsByClassName("wrong")[0].remove();

@@ -388,7 +388,7 @@ button{
 @media screen and (min-height:500px) {
 	.cardcenter1
 	{
-		overflow-y:scroll;
+		/* overflow-y:hidden; */
 		overflow-x: hidden;
 		max-height: 500px;
 	}

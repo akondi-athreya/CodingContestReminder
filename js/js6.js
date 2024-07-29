@@ -7,13 +7,14 @@ document.addEventListener('DOMContentLoaded', function() {
         team.addEventListener('mouseenter', () => {
            
             gsap.to(card, {
-                top: '-300%',
+                top: '-100%',
                 left: '-80%',
 				borderRadius: '10px',
-                width: '220px',  // 300% of the initial size
-                height: '220px', // 300% of the initial size
+                width: '250px',  // 300% of the initial size
+                height: '250px', // 300% of the initial size
                 opacity: 1,
                 duration: 0.3,
+                
                 ease: "power1.inOut"
             });
         });
