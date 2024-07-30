@@ -65,7 +65,7 @@ function codechefUserNameFromUser(value){
     signUpDataObject.codechef=value;
 }
 function submitDataSignUpPage(event){
-    window.location.href="/html/html1.html";
+    window.location.href="/html/html2.html";
     event.preventDefault(); 
     var val=signUpDataObject.username;
     console.log(val); 
