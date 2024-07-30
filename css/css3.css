@@ -1,7 +1,7 @@
 .header {
     width: 100%;
-    height: 80px;
-    box-shadow: 1px 1px 3px skyblue;
+    height: 10svh;
+    box-shadow: 1px 1px 3px #56B6F6;
     background-color: white;
     display: flex;
     align-items: center;
@@ -418,7 +418,7 @@
 .pf-hl-1,.pf-hc-1,.pf-hcf-1{
     width: 100%;
     height: 18svh;
-    background-color: skyblue;
+    background-color: #56B6F6;
     display: flex;
     /* flex-direction: column; */
     align-items: center;
@@ -490,23 +490,29 @@
     justify-content: center;
 } 
 .cpu{
-    width: 100%;
-    height: 40svh;
+    width: 95%;
+    height: 35svh;
     color: black;
     font-size: 20px;
     font-family: Roboto Mono;
     display: flex;
     flex-direction: column;
-    align-items: start;
-    justify-content: start;
+    align-items: center;
+    justify-content: center;
+    text-align: justify;
     
 }
 .cpu-0{
     width: 95%;
     height: 30svh;
     display: flex;
-    font-size: 10px;
+    font-size: 12px;
+    padding-left: 10px;
+    padding-right: 10px;
     font-family: Roboto Mono;
+    text-align: justify;
+    align-items: center;
+    justify-content: center;
     /* justify-content: center; */
     
     
@@ -518,8 +524,10 @@
     font-size: 15px;
     font-family: Roboto Mono;
     display: flex;
+    text-align:left;
     /* flex-direction: column; */
     align-items: start;
+    justify-content: center;
 }
 .juju{
     width: 20px;
@@ -557,19 +565,44 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-left: 20px;
+    /* padding-left: 20px; */
     position: relative;
 }
 .pro-dat{
     width: 80%;
     height: 100%;
     display: flex;
-    align-items: end;
-    justify-content: start;
-    color: skyblue;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: whitesmoke;
     font-size: 20px;
     font-family: Roboto Mono ;
 
+}
+.pro-dat-1{
+    width: 90%;
+    height: 50%;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    text-align: justify;
+
+    color: white;
+    /* padding-left: 5px; */
+    font-size: 13px;
+    font-family: Roboto Mono ;
+}
+.pro-dat-2{
+    width: 90%;
+    height: 10%;
+    display: flex;
+    align-items:end;
+    justify-content:start;
+    color: white;
+    font-size: 20px;
+    font-weight: 500;
+    font-family: Roboto Mono ;
 }
 .pro-icons{
     width: 25%;
@@ -625,7 +658,7 @@
 .bdg{
     width: 100%;
     height: 80svh;
-    background-color: skyblue;
+    background-color:#56B6F6;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -701,7 +734,7 @@
 .prf-sl{
     width: 95%;
     height: 19svh;
-    background-color: skyblue;
+    background-color: #56B6F6;
     display: flex;
     /* flex-direction: column; */
     align-items: center;
@@ -739,7 +772,7 @@
 .prf-sc{
     width: 95%;
     height: 19svh;
-    background-color: skyblue;
+    background-color: #56B6F6;
     display: flex;
     /* flex-direction: column; */
     align-items: center;
@@ -765,7 +798,7 @@
 .prf-scf{
     width: 95%;
     height: 19svh;
-    background-color: skyblue;
+    background-color: #56B6F6;
     display: flex;
     /* flex-direction: column; */
     align-items: center;
@@ -790,7 +823,7 @@
 .prf-sg{
     width: 95%;
     height: 19svh;
-    background-color: skyblue;
+    background-color: #56B6F6;
     display: flex;
     /* flex-direction: column; */
     align-items: center;
@@ -913,7 +946,7 @@
 
 .dash-chart{
     width: 100%;
-    height: 35svh;
+    height: 33svh;
     background-color: #EAF0F2;
     display: flex;
     /* flex-direction: column; */
@@ -1083,27 +1116,27 @@ li button{
     
 }
 .chiju{
-    width: 130px;
-    height:40px;
+    width: 80px;
+    height:20px;
     padding-left: 10px;
     padding-top: 10px;
 
 }
 .chiju6{
-    width: 170px;
-    height:40px;
+    width: 100px;
+    height:30px;
     padding-left: 10px;
     /* padding-top: 10px; */
 }
 .chiju1{
-    width: 130px;
-    height:30px;
+    width: 100px;
+    height:20px;
     padding-left: 10px;
     padding-top: 10px;
 
 }
 .chiju4{
-    width: 130px;
+    width: 100px;
     height:50px;
     padding-left: 10px;
     /* padding-top: 10px; */
@@ -1111,8 +1144,8 @@ li button{
 
 }
 .chiju{
-    width: 130px;
-    height:50px;
+    width: 100px;
+    height:30px;
     padding-left: 10px;
     /* padding-top: 10px; */
     /* padding-bottom: 100px; */
@@ -1120,7 +1153,7 @@ li button{
 }
 .chiju2{
     width: 100px;
-    height: 100px;
+    height: 50px;
     padding-left: 10px;
     /* padding-top: 100px; */
 }
@@ -1202,6 +1235,15 @@ li button{
         width: 100%;
         align-items: center;
         justify-content: center;
+        gap: 20px;
+    }
+    .pro-dat-1{
+        display: none;
+    }
+    .pro-dat-2{
+        color: black;
+        align-items: center;
+        justify-content: center;
     }
     .pro-icons2 {
         top: 0;
@@ -1217,6 +1259,15 @@ li button{
         width: 30px;
         height: 30px;
     }
+}
+@media screen and (max-width: 647px) {
+    .pro-data-1{
+        display: none;
+    }
+    .pro-data-2{
+        color: black;
+    }
+    
 }
 
 @media screen and (max-width: 600px) {
