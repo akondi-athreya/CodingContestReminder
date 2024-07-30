@@ -168,7 +168,7 @@ a{
 	border-radius: 15px;
 	overflow: hidden;
 }
-.username
+.username1
 {
 	/* height: 50px; */
 	background-color: white;
@@ -266,7 +266,7 @@ font-size: 20px;
 	font-weight: 800;
 	letter-spacing: 1px;
 }
-.card {
+.card_txt {
     background-color: white;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -388,7 +388,7 @@ button{
 @media screen and (min-height:500px) {
 	.cardcenter1
 	{
-		overflow-y:scroll;
+		/* overflow-y:hidden; */
 		overflow-x: hidden;
 		max-height: 500px;
 	}
