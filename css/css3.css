@@ -534,12 +534,13 @@
     height: 20px;
 }
 .pro,.pro-hide{
-    padding-top: 10px;
+    /* padding-top: 10px; */
     width: 200px ;
     height: 200px;
     background-color: azure;
     border-radius: 100px;
     overflow: hidden;
+    position: relative;
 }
 .dashboard-prof-hide{
     width: 100%;
@@ -1176,8 +1177,10 @@ li button{
     height: 80px;
 }
 .juuii{
-    width: 200px;
-    height: 200px;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    top: 0%;
 }
 .juuii1{
     width: 200px;
