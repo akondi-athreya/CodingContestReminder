@@ -175,18 +175,18 @@ function cfh(){
 
 }
 
-codechef_data = {}
-function fun(){
-    fetch('https://codechef-api.vercel.app/handle/ayyappa19')
-        .then(data => data.json())
-        .then(data => {
-            codechef_data = data;
-            console.log(codechef_data);
-        })
-        .catch(error => console.error('Error fetching', error));
-}
+// codechef_data = {}
+// function fun(){
+//     fetch('https://codechef-api.vercel.app/handle/ayyappa19')
+//         .then(data => data.json())
+//         .then(data => {
+//             codechef_data = data;
+//             console.log(codechef_data);
+//         })
+//         .catch(error => console.error('Error fetching', error));
+// }
 
-fun();
+// fun();
 // setTimeout(() => {
 //     console.log(codechef_data);
 //     code_rate();
