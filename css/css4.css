@@ -66,6 +66,7 @@ body {
     justify-content: center;
     align-items: center;
     border-radius: 15px;
+    position: relative;
 }
 
 .garp_contests {
@@ -419,6 +420,8 @@ body {
     left: calc(55% - 1.25em);
     transform: scale(2);
     z-index: 999;
+    left: 50%;
+    top: 50%;
 }
 
 
@@ -578,30 +581,7 @@ body {
 
 /* media queries */
 @media screen and (max-width:1370px) {
-    .garp_item_docker {
-        height: fit-content;
-        width: 350px;
-        gap: 10px;
-        padding: 10px;
-    }
-
-    .docker_items {
-        height: 60px;
-        width: 80px;
-        border-radius: 15px;
-    }
-
-    .garp_item_docker {
-        flex-direction: row;
-    }
-
-    .garp_left {
-        height: 20svh;
-    }
-
-    .garp_item_docker {
-        transform: scale(1.4);
-    }
+    
 
     .garp_right {
         margin-top: 50px;
@@ -684,6 +664,31 @@ body {
         height: 120svh;
     }
 
+}
+@media screen and (max-width:1350px) {
+    .garp_item_docker {
+        flex-direction: row;
+    }
+    .garp_item_docker {
+        height: fit-content;
+        width: 350px;
+        gap: 10px;
+        padding: 10px;
+    }
+
+    .docker_items {
+        height: 60px;
+        width: 80px;
+        border-radius: 15px;
+    }
+
+    .garp_left {
+        height: 20svh;
+    }
+
+    .garp_item_docker {
+        transform: scale(1.4);
+    }
 }
 
 @keyframes jump824 {
@@ -810,9 +815,9 @@ body {
     }
 
     .rotate_div {
-        padding: 2px;
-        left: 10;
-        bottom: 10;
+        padding: 5px;
+        left: 20;
+        bottom: 20;
     }
 
     .garp_item_docker {
